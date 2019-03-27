@@ -1,48 +1,38 @@
 const Controller = function(){
-    this.down = new Controller.ButtonInput();
+
     this.up = new Controller.ButtonInput();
     this.left = new Controller.ButtonInput();
     this.right = new Controller.ButtonInput();
 
-    this.keyDownUp = function(event) {
-        var down = (event.type == 'keydown') ? true : false;
-        //why is this only a binary decision on keydown
+    this.keyDownUp = function(event, keycode) {
 
-        switch(event.keyCode){
+        //also checks if input is valid for controls, boolean applied only on appropriate controls
+        var buttonDown = (event == 'keydown') ? true : false;
 
-            case 37: this.left.getInput(down); break;
-            case 38: this.up.getInput(down); break;
-            case 39: this.right.getInput(down); break;
-            case 40: this.down.getInput(down);
+        switch(keycode){
+            case 37: this.left.getInput(buttonDown); break;
+            case 38: this.up.getInput(buttonDown); break;
+            case 39: this.right.getInput(buttonDown); break;
         }
 
-        alert('You pressed a key (' + event.keyCode + ')!');
-    };
-
-    this.handleKeyDownUp = (event)=>{
-        this.keyDownUp(event);
+        console.log(event + keycode);
     };
 };
 
-//appending constructor: to the controller
-//what does contructor do tho..
-//try break it and observe
-//similar to JSON params?
 Controller.prototype = {
     contructor : Controller
 }
 
-//init this.down as false?
 Controller.ButtonInput = function(){
-    this.active = this.down = false;
+    this.active = false;
+    this.down = false;
 }
 
-//constructor param is above function
-//getinput param determines key pressed?
 Controller.ButtonInput.prototype = {
     constructor : Controller.ButtonInput,
-    getInput : function(down){
-        if(this.down != down) this.active = down;
-        this.down = down;
+
+    getInput : function(buttDown){
+        if (this.down != buttDown) this.active = buttDown;
+        this.down = buttDown;
     }
 };
