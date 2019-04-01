@@ -14,8 +14,6 @@ const Controller = function(){
             case 38: this.up.getInput(buttonDown); break;
             case 39: this.right.getInput(buttonDown); break;
         }
-
-        console.log(event + keycode);
     };
 };
 

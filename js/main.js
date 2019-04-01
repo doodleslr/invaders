@@ -19,15 +19,12 @@ window.addEventListener('load', function(event){
     };
 
     var update = function(){
-        if(controller.left.active)  { console.log('controller left active'); game.world.player.moveLeft();}
-        if(controller.right.active) { console.log('controller right active'); game.world.player.moveRight();}
-        if(controller.up.active)    { console.log('controller up active'); game.world.player.moveForward();}
-
-        game.update();
+        if(controller.left.active)  {   game.world.player.rotateLeft();}
+        if(controller.right.active) {   game.world.player.rotateRight();}
+        if(controller.up.active)    {   game.world.player.moveForward();}
     };
 
     var resize = function(event) {
-  
         display.resize(document.documentElement.clientWidth - 32, document.documentElement.clientHeight - 32, game.world.height / game.world.width);
         display.render();
     
