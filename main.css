@@ -14,7 +14,16 @@ body {
 
 }
 
-/* 04/07/2018 */
+#container {
+    position: relative;
+}
+
+#overlay {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    display: none;
+}
 
 canvas { image-rendering:pixelated; }
 
