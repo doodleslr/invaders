@@ -1,36 +1,46 @@
-const Display = function(canvas){
+const Display = function(canvas, height, width){
 
-    this.buffer = document.createElement('canvas').getContext('2d'),
-    this.context = canvas.getContext('2d');
+    canvas.width = width;
+    canvas.height = height;
+
+    var context = canvas.getContext('2d');
 
     this.bg = function(color){
-        this.buffer.fillStyle = color;
-        this.buffer.fillRect(0, 0, this.buffer.canvas.width, this.buffer.canvas.height);
+        context.fillStyle = color;
+        context.fillRect(0, 0, canvas.width, canvas.height);
     };
 
-    this.drawPlayer = function(x, y, width, height, color){
-        this.buffer.fillStyle = color;
-        this.buffer.fillRect(Math.floor(x), Math.floor(y), width, height);
+    this.drawPlayer = function(x, y, width, height, color, angle){
+        context.fillStyle = color;
+        context.fillRect(Math.round(x), Math.round(y), width, height, angle);
     };
 
-    this.render = function() {
-        this.context.drawImage(this.buffer.canvas,
-        0, 0, this.buffer.canvas.width, this.buffer.canvas.height,
-        0, 0, this.context.canvas.width, this.context.canvas.height
-        ); 
+    this.drawPlanet = function(x, y, width, height, color){
+        context.fillStyle = color;
+        context.fillRect(x, y, width, height);
     };
 
-    this.resize = function(width, height, ratio) {
 
-        if(height / width > ratio) {
-            this.context.canvas.height = width * ratio;
-            this.context.canvas.width = width; 
-        } else {
-            this.context.canvas.height = height;
-            this.context.canvas.width = height * ratio; 
-        }
-        
-    };
+
+    // KEEP MAY BE ESSENTIAL TO RESIZE IN MAIN
+    // ALSO TO DRAW SPACESHIP AND WORLD OBJECTS
+    // this.render = function() {
+    //     context.drawImage(canvas,
+    //     0, 0, canvas.width, canvas.height,
+    //     0, 0, context.canvas.width, context.canvas.height
+    //     ); 
+    // };
+
+    // this.resize = function(width, height, ratio) {
+
+    //     if(height / width > ratio) {
+    //         this.context.canvas.height = width * ratio;
+    //         this.context.canvas.width = width; 
+    //     } else {
+    //         this.context.canvas.height = height;
+    //         this.context.canvas.width = height * ratio; 
+    //     }
+    // };
 };
 
 Display.prototype = {

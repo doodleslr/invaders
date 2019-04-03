@@ -6,7 +6,6 @@ const Controller = function(){
 
     this.keyDownUp = function(event, keycode) {
 
-        //also checks if input is valid for controls, boolean applied only on appropriate controls
         var buttonDown = (event == 'keydown') ? true : false;
 
         switch(keycode){
