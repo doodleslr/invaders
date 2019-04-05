@@ -15,9 +15,10 @@ const Display = function(canvas, height, width){
         context.fillRect(Math.round(x), Math.round(y), width, height, angle);
     };
 
-    this.drawPlanet = function(x, y, width, height, color){
+    this.drawPlanet = function(x, y, radius, color){
         context.fillStyle = color;
-        context.fillRect(x, y, width, height);
+        context.fill();
+        context.arc(x, y, radius, 0, 2* Math.PI);
     };
 
 

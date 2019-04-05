@@ -1,55 +1,74 @@
 const Game = function(){
 
-    this.world = {
-        // World properties
-        background_color: 'rgba(61, 61, 106, 0.25)',
-        height: 350,
-        width: 600,
+    this.world = new Game.World();
 
-        player: new Game.Player(400, 200, 0),
-
-        // create for loop from json array of planets
-        // can include important info to insert for each planet and its location
-        // can also ideally generate html elements bound to each planet
-        // should be easy on collision to ref which planet info to show
-        // get one single planet collision working first before generating more
-        // poth pt7 and game.js
-        planet: new Game.Planet(50, 50),
-
-        // World movement
-        // Between 0.95 and 0.99 for best results
-        friction: 0.96,
-        update: function(){
-            this.player.velocity_x *= this.friction;
-            this.player.velocity_y *= this.friction;
-            this.player.x += this.player.velocity_x;
-            this.player.y += this.player.velocity_y;
-
-            // World collision
-            if      (this.player.getLeft()   < 0           ){ this.player.setLeft(0);             this.player.velocity_x = 0;}
-            else if (this.player.getRight()  > this.width  ){ this.player.setRight(this.width);   this.player.velocity_x = 0;}
-            if      (this.player.getTop()    < 0           ){ this.player.setTop(0);              this.player.velocity_y = 0;}
-            else if (this.player.getBottom() > this.height ){ this.player.setBottom(this.height); this.player.velocity_y = 0;}
-        }
+    this.update = function(){
+        this.world.update();
     }
 };
 
-Game.prototype = {
-    constructor : Game
+Game.prototype = { constructor : Game };
+
+// WORLD-----------------------------------------------------------------------------------------------------------
+Game.World = function(){
+
+    // World properties
+    this.background_color   = 'rgba(61, 61, 106, 0.25)';
+    this.height             = 436;
+    this.width              = 576;
+    this.friction           = 0.96;
+
+    this.vector             = new Game.World.Vector();
+
+    this.player             = new Game.World.Player(400, 200, 0);
+
+    // create for loop from json array of planets
+    // can include important info to insert for each planet and its location
+    // can also ideally generate html elements bound to each planet
+    // should be easy on collision to ref which planet info to show
+    // get one single planet collision working first before generating more
+    // poth pt7 and game.js
+    this.planet             = new Game.World.Planet(50, 50);
+
+    this.update             = function(){
+        this.player.velocity_x *= this.friction;
+        this.player.velocity_y *= this.friction;
+        this.player.x += this.player.velocity_x;
+        this.player.y += this.player.velocity_y;
+
+        this.collideWorld(this.player);
+        if(this.vector.checkCol(this.player, this.planet)) {
+            this.player.velocity_x = 0;
+            this.player.velocity_y = 0;
+        }
+        
+    };
+};
+Game.World.prototype = {
+
+    constructor: Game.World,
+
+    collideWorld:function(object) {
+        if      (object.getLeft()   < 0           ){ object.setLeft(0);             object.velocity_x = 0; }
+        else if (object.getRight()  > this.width  ){ object.setRight(this.width);   object.velocity_x = 0; }
+        if      (object.getTop()    < 0           ){ object.setTop(0);              object.velocity_y = 0; }
+        else if (object.getBottom() > this.height ){ object.setBottom(this.height); object.velocity_y = 0; }
+    }
 };
 
-Game.Player = function(x, y, a){
-    // Player properties
-    this.color      = '#ff0000';
-    this.height     = 36;
-    this.width      = 36;
+// PLAYER ---------------------------------------------------------------------------------------------------------------
+Game.World.Player = function(x, y, a){
 
-    // Player position
-    this.x          = x;
-    this.y          = y;
+    // Player properties
+    this.height     = 20;
+    this.width      = 8;
+    this.color      = '#ff0000';
+    this.radius     = 8;
     
     // Player movement
     this.speed      = 1;
+    this.x          = x;
+    this.y          = y;
     this.velocity_x = 0;
     this.velocity_y = 0;
 
@@ -74,24 +93,48 @@ Game.Player = function(x, y, a){
                             this.velocity_x += this.speed * Math.sin(this.angle);
                             this.velocity_y -= this.speed * Math.cos(this.angle);
                         };
-    
-    this.getLeft    = function(){   return this.x;  };
-    this.getRight   = function(){   return this.x + this.width;     };
-    this.getTop     = function(){   return this.y;  };
-    this.getBottom  = function(){   return this.y + this.height;    };
-
-    this.setLeft    = function(x){   this.x   =   x;  };
-    this.setRight   = function(x){   this.x   =   x - this.width;     };
-    this.setTop     = function(y){   this.y   =   y;  };
-    this.setBottom  = function(y){   this.y   =   y - this.height;    };
 };
 
-Game.Planet = function(x, y){
+Game.World.Player.prototype = {
+    constructor: Game.World.Player,
+
+        // World collision function bank
+        getLeft:      function(){   return this.x;                     },
+        getRight:     function(){   return this.x       + this.width;  },
+        getTop:       function(){   return this.y;                     },
+        getBottom:    function(){   return this.y       + this.height; },
+
+        setLeft:      function(x){  this.x       =   x;                },
+        setRight:     function(x){  this.x       =   x - this.width;   },
+        setTop:       function(y){  this.y       =   y;                },
+        setBottom:    function(y){  this.y       =   y - this.height;  }
+};
+
+// PLANETS -----------------------------------------------------------------------------------------------------------------
+Game.World.Planet = function(x, y){
     this.color      = '#fff';
-    this.height     = 36;
-    this.width      = 36;
+    this.radius     = 25;
 
     this.x          = x;
     this.y          = y;
+};
 
+// VECTOR COLLISION--------------------------------------------------------------------------------------------------------------------
+Game.World.Vector = function(){
+    this.x   = null;
+    this.y   = null;
+};
+
+Game.World.Vector.prototype = {
+    constructor: Game.World.Vector,
+
+    checkCol:     function(obj1, obj2) {
+        this.x = obj1.x - obj2.x;
+        this.y = obj1.y - obj2.y;
+
+        if(Math.sqrt(this.x * this.x + this.y * this.y) < obj1.radius + obj2.radius){
+            return true;
+        }
+        return false;
+    }
 }

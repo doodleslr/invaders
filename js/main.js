@@ -15,23 +15,26 @@ window.addEventListener('load', function(event){
 
         // updating background to remove player trails
         display.bg(game.world.background_color);
-        display.drawPlanet(game.world.planet.x, game.world.planet.y, game.world.planet.width, game.world.planet.height, game.world.planet.color);
+        display.drawPlanet  (   game.world.planet.x, 
+                                game.world.planet.y, 
+                                game.world.planet.radius, 
+                                game.world.planet.color
+                            );
 
         // updating player rotation
         ctx.save();
-        ctx.translate(  
-                        game.world.player.x + game.world.player.width / 2, 
-                        game.world.player.y + game.world.player.height / 2
-        );
+        ctx.translate   (   game.world.player.x + game.world.player.width / 2, 
+                            game.world.player.y + game.world.player.height / 2
+                        );
         ctx.rotate(game.world.player.angle);
-        display.drawPlayer(
-                        game.world.player.width /-2,
-                        game.world.player.height / -2,
-                        game.world.player.width,
-                        game.world.player.height,
-                        game.world.player.color,
-                        game.world.player.angle
-        );
+        display.drawPlayer  (
+                                game.world.player.width /-2,
+                                game.world.player.height / -2,
+                                game.world.player.width,
+                                game.world.player.height,
+                                game.world.player.color,
+                                game.world.player.angle
+                            );
         ctx.restore();
 
         game.world.update();
