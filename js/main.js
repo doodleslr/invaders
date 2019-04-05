@@ -2,6 +2,23 @@ window.addEventListener('load', function(event){
 
     'use strict';
 
+    let planetArr;
+    const reqUrl = "js/planets.json";
+    
+    const requestJSON   =   function(){
+        let request = new XMLHttpRequest();
+        request.open("GET", reqUrl);
+        request.responseType = "json";
+        request.send();
+
+        request.onload = function(){
+            planetArr = request.response;
+        };
+
+
+        return true;
+    }
+
     //init functions
     var ctx = document.querySelector('canvas').getContext('2d');   
 
@@ -15,11 +32,14 @@ window.addEventListener('load', function(event){
 
         // updating background to remove player trails
         display.bg(game.world.background_color);
-        display.drawPlanet  (   game.world.planet.x, 
-                                game.world.planet.y, 
-                                game.world.planet.radius, 
-                                game.world.planet.color
-                            );
+        for(var i = 0; i < planetArr.planet.length; i++) {
+            display.drawPlanet  (   
+                planetArr.planet[i].x, 
+                planetArr.planet[i].y, 
+                planetArr.planet[i].radius, 
+                planetArr.planet[i].color
+            );
+        };
 
         // updating player rotation
         ctx.save();
@@ -61,6 +81,10 @@ window.addEventListener('load', function(event){
     window.addEventListener('keyup', keyDownUp);
 
     //resize();
-    
-    engine.start();
+    if(requestJSON()){
+        engine.start();
+    } else {
+        alert(reqUrl + ' array not found');
+    };
+
 });

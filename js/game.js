@@ -27,7 +27,6 @@ Game.World = function(){
     // can also ideally generate html elements bound to each planet
     // should be easy on collision to ref which planet info to show
     // get one single planet collision working first before generating more
-    // poth pt7 and game.js
     this.planet             = new Game.World.Planet(50, 50);
 
     this.update             = function(){

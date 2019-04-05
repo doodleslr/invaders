@@ -1,0 +1,32 @@
+{
+    "planet": [
+        {
+            "name"  : "Skills",
+            "color" : "#000",
+            "radius": 20,
+            "x"     : 70,
+            "y"     : 70
+        },
+        {
+            "name"  : "About",
+            "color" : "#fff",
+            "radius": 25,
+            "x"     : 200,
+            "y"     : 200
+        },
+        {
+            "name"  : "My Work",
+            "color" : "#000",
+            "radius": 30,
+            "x"     : 300,
+            "y"     : 300
+        },
+        {
+            "name"  : "Contact",
+            "color" : "#fff",
+            "radius": 35,
+            "x"     : 400,
+            "y"     : 400
+        }
+    ]
+}
