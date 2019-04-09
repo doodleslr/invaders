@@ -65,3 +65,17 @@ canvas { image-rendering:pixelated; }
   text-decoration:none;
 
 }
+
+#My-Work {
+    display: none;
+}
+
+#Contact {
+    display: none;
+}
+#Skills {
+    display: none;
+}
+#About {
+    display: none;
+}
