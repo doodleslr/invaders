@@ -43,15 +43,17 @@ Game.World = function(){
         
         for(p; p > -1; --p){
             var plnt = this.planet[p];
+            item = document.querySelector('#' + plnt.name);
+            
             if(this.vector.checkCol(plyr, plnt)) {
-                item = document.querySelector('#' + plnt.name);
+                // item = document.querySelector('#' + plnt.name);
 
                 this.player.velocity_x = 0;
                 this.player.velocity_y = 0;
                 item.style.display = 'block';
             } else {
                 //console.log(item.style.display)
-                //item.style.display = 'none';
+                item.style.display = 'none';
                 item = null;
             }
 
