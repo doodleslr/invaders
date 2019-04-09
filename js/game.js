@@ -22,12 +22,14 @@ Game.World = function(){
 
     this.player             = new Game.World.Player(400, 200, 0);
 
-    // create for loop from json array of planets
-    // can include important info to insert for each planet and its location
-    // can also ideally generate html elements bound to each planet
-    // should be easy on collision to ref which planet info to show
-    // get one single planet collision working first before generating more
-    this.planet             = new Game.World.Planet(50, 50);
+    this.planet             = new Array();
+
+    this.planetArr          = function(x, y, r, c, n){
+        this.planet.push        ( new Game.World.Planet(x, y, r, c, n))
+    };
+
+    var item                = null;
+    var plyr                = this.player;
 
     this.update             = function(){
         this.player.velocity_x *= this.friction;
@@ -36,11 +38,24 @@ Game.World = function(){
         this.player.y += this.player.velocity_y;
 
         this.collideWorld(this.player);
-        if(this.vector.checkCol(this.player, this.planet)) {
-            this.player.velocity_x = 0;
-            this.player.velocity_y = 0;
-        }
+
+        var p = this.planet.length - 1;
         
+        for(p; p > -1; --p){
+            var plnt = this.planet[p];
+            if(this.vector.checkCol(plyr, plnt)) {
+                item = document.querySelector('#' + plnt.name);
+
+                this.player.velocity_x = 0;
+                this.player.velocity_y = 0;
+                item.style.display = 'block';
+            } else {
+                //console.log(item.style.display)
+                //item.style.display = 'none';
+                item = null;
+            }
+
+        }
     };
 };
 Game.World.prototype = {
@@ -110,10 +125,10 @@ Game.World.Player.prototype = {
 };
 
 // PLANETS -----------------------------------------------------------------------------------------------------------------
-Game.World.Planet = function(x, y){
-    this.color      = '#fff';
-    this.radius     = 25;
-
+Game.World.Planet = function(x, y, r, c, n){
+    this.color      = c;
+    this.radius     = r;
+    this.name       = n
     this.x          = x;
     this.y          = y;
 };
@@ -136,4 +151,4 @@ Game.World.Vector.prototype = {
         }
         return false;
     }
-}
+};

@@ -1,6 +1,13 @@
 {
     "planet": [
         {
+            "name"  : "My-Work",
+            "color" : "#000",
+            "radius": 30,
+            "x"     : 480,
+            "y"     : 340
+        },
+        {
             "name"  : "Skills",
             "color" : "#000",
             "radius": 20,
@@ -11,22 +18,15 @@
             "name"  : "About",
             "color" : "#fff",
             "radius": 25,
-            "x"     : 200,
-            "y"     : 200
-        },
-        {
-            "name"  : "My Work",
-            "color" : "#000",
-            "radius": 30,
-            "x"     : 300,
-            "y"     : 300
+            "x"     : 60,
+            "y"     : 370
         },
         {
             "name"  : "Contact",
             "color" : "#fff",
             "radius": 35,
-            "x"     : 400,
-            "y"     : 400
+            "x"     : 470,
+            "y"     : 80
         }
     ]
 }

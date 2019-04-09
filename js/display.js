@@ -16,8 +16,8 @@ const Display = function(canvas, height, width){
     };
 
     this.drawPlanet = function(x, y, radius, color){
-        context.fillStyle = color;
-        context.fill();
+        context.strokeStyle = color;
+        context.stroke();
         context.arc(x, y, radius, 0, 2* Math.PI);
     };
 
