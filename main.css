@@ -16,7 +16,12 @@ body {
 
 #container {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#container div { z-index: 3; }
 
 #overlay {
     position: absolute;
@@ -25,7 +30,10 @@ body {
     display: none;
 }
 
-canvas { image-rendering:pixelated; }
+#player-canvas, #background-canvas { image-rendering:pixelated; }
+canvas { position: absolute; }
+#player-canvas { z-index: 1 }
+#background-canvas { z-index: 2 }
 
 #menu {
 
