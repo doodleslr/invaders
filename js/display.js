@@ -1,27 +1,47 @@
-const Display = function(canvas, height, width){
+const Display = function(assetCanvas, plyrCanvas, height, width){
 
-    canvas.width = width;
-    canvas.height = height;
+    assetCanvas.width   = plyrCanvas.width = Math.round(width);
+    assetCanvas.height  = plyrCanvas.height = Math.round(height);
 
-    var context = canvas.getContext('2d');
-
-    this.bg = function(color){
-        context.fillStyle = color;
-        context.fillRect(0, 0, canvas.width, canvas.height);
-    };
+    const assetContext  = assetCanvas.getContext('2d');
+    const plyrContext   = plyrCanvas.getContext('2d');
 
     this.drawPlayer = function(x, y, width, height, color, angle){
-        context.fillStyle = color;
-        context.fillRect(Math.round(x), Math.round(y), width, height, angle);
+        plyrContext.fillStyle = color;
+        plyrContext.fillRect(Math.round(x), Math.round(y), width, height, angle);
+    };
+    
+    // image asset loading
+    var planetStore = [];
+    var finished = false;
+    this.genPlanet = function(x, y, name, arrLength){
+        var img = new Image();
+        img.src = 'images/' + name + '.svg';
+        if(!finished){
+            planetStore.push({
+                image : img,
+                x : x,
+                y : y,
+            });
+            img.onload = function(){
+                if(planetStore.length === arrLength) {
+                    finished = true;
+                }
+            }
+        } 
     };
 
-    this.drawPlanet = function(x, y, radius, color){
-        context.strokeStyle = color;
-        context.stroke();
-        context.arc(x, y, radius, 0, 2* Math.PI);
+    this.drawPlanet = function(){
+        for (var i = planetStore.length - 1; i > -1; --i) {
+            assetContext.drawImage(planetStore[i].image, planetStore[i].x, planetStore[i].y);
+        };
+    }
+
+    // must fill bg of playable canvas not bg canvas
+    this.bg = function(color){
+        plyrContext.fillStyle = color;
+        plyrContext.fillRect(0, 0, plyrCanvas.width, plyrCanvas.height);
     };
-
-
 
     // KEEP MAY BE ESSENTIAL TO RESIZE IN MAIN
     // ALSO TO DRAW SPACESHIP AND WORLD OBJECTS

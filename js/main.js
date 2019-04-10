@@ -19,33 +19,63 @@ window.addEventListener('load', function(event){
         
     }
 
-    var ctx = document.querySelector('canvas').getContext('2d');
+    const ctx = document.querySelector('#player-canvas').getContext('2d');
 
-    var drawPlanet = function(){
-        for(var i = 0; i < planetArr.planet.length; i++) {
-            display.drawPlanet  (   
-                planetArr.planet[i].x, 
-                planetArr.planet[i].y, 
-                planetArr.planet[i].radius, 
-                planetArr.planet[i].color
-            );
-        };
-    };
+    var executed = false;
+    const runOnceAndThen = function(){
+        if(!executed){
+            executed = true;
+            genPlanetCol();
+            genPlanetDraw();
+        } else {
+            drawPlanet();
+        }
+    }
 
-    var genOnce = true;
-    var genPlanet = function(){
+    const genPlanetCol = function(){
+        // generate planet collision
         for(var i = planetArr.planet.length - 1; i > -1; --i) {
             game.world.planetArr(
                 planetArr.planet[i].x, 
                 planetArr.planet[i].y, 
-                planetArr.planet[i].radius, 
-                planetArr.planet[i].color,
+                planetArr.planet[i].radius,
                 planetArr.planet[i].name
             );
         };
     };
 
-    var playerRotate = function(){
+    const genPlanetDraw = function(){        
+        // generate planet images
+        for(var i = planetArr.planet.length - 1; i > -1; --i) {
+            display.genPlanet  (   
+                planetArr.planet[i].x, 
+                planetArr.planet[i].y,
+                planetArr.planet[i].name,
+                planetArr.planet.length
+            );
+        };
+    };
+
+    const drawPlanet = function(){
+        // draw planet images
+        display.drawPlanet();
+    };
+
+    // const drawPlanet = function(){        
+    //     // draw planets
+    //     for(var i = planetArr.planet.length - 1; i > -1; --i) {
+    //         display.drawPlanet  (   
+    //             planetArr.planet[i].x, 
+    //             planetArr.planet[i].y,
+    //             planetArr.planet[i].name
+    //         );
+    //     };
+    // };
+
+
+
+
+    const playerRotate = function(){
         ctx.save();
         ctx.translate   (   game.world.player.x + game.world.player.width / 2, 
                             game.world.player.y + game.world.player.height / 2
@@ -62,23 +92,18 @@ window.addEventListener('load', function(event){
         ctx.restore();
     };
 
-    var keyDownUp = function(event) { controller.keyDownUp(event.type, event.keyCode); };
+    const keyDownUp = function(event) { controller.keyDownUp(event.type, event.keyCode); };
 
-    var update = function(){
+    const update = function(){
         // player controls
         if(controller.left.active || controller.right.active || controller.up.active)  {
             game.world.player.update(controller);
         };
 
+        runOnceAndThen();
+
         // world background
         display.bg(game.world.background_color);
-        
-        // draw and generate planets
-        drawPlanet();
-        if(genOnce){
-            genPlanet();
-            genOnce = false;
-        }
 
         // player rotation
         playerRotate();
@@ -94,13 +119,13 @@ window.addEventListener('load', function(event){
     // };
 
     //handles user input
-    var controller   = new Controller();
+    const controller   = new Controller();
     //holds game logic
-    var game         = new Game();
+    const game         = new Game();
     //targets canvas and resizing
-    var display      = new Display(document.querySelector('canvas'), game.world.height, game.world.width);
+    const display      = new Display(document.querySelector('#background-canvas'), document.querySelector('#player-canvas'), game.world.height, game.world.width);
     //where above modules interact
-    var engine       = new Engine(1000/30, update);
+    const engine       = new Engine(1000/30, update);
     
     //window.addEventListener('resize', resize);
     window.addEventListener('keydown', keyDownUp);

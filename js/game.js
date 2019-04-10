@@ -24,18 +24,22 @@ Game.World = function(){
 
     this.planet             = new Array();
 
-    this.planetArr          = function(x, y, r, c, n){
-        this.planet.push        ( new Game.World.Planet(x, y, r, c, n))
+    this.planetArr          = function(x, y, r, n){
+        this.planet.push        ( new Game.World.Planet(x, y, r, n))
     };
 
     var item                = null;
     var plyr                = this.player;
 
     this.update             = function(){
-        this.player.velocity_x *= this.friction;
-        this.player.velocity_y *= this.friction;
-        this.player.x += this.player.velocity_x;
-        this.player.y += this.player.velocity_y;
+            this.player.velocity_x *= this.friction;
+            this.player.velocity_y *= this.friction;
+
+        // can optimise player velocity drift-off decay much faster
+        // with 4 decimal places rather than infinite
+        // stop calculation and drifting along all the way down to imperceptibly small decimal places
+        this.player.x += Math.round(this.player.velocity_x * 4) / 4;
+        this.player.y += Math.round(this.player.velocity_y * 4) / 4;
 
         this.collideWorld(this.player);
 
@@ -46,17 +50,12 @@ Game.World = function(){
             item = document.querySelector('#' + plnt.name);
             
             if(this.vector.checkCol(plyr, plnt)) {
-                // item = document.querySelector('#' + plnt.name);
-
-                this.player.velocity_x = 0;
-                this.player.velocity_y = 0;
+                this.player.velocity_x = this.player.velocity_y = 0;
                 item.style.display = 'block';
             } else {
-                //console.log(item.style.display)
                 item.style.display = 'none';
                 item = null;
             }
-
         }
     };
 };
@@ -114,21 +113,20 @@ Game.World.Player = function(x, y, a){
 Game.World.Player.prototype = {
     constructor: Game.World.Player,
 
-        // World collision function bank
-        getLeft:      function(){   return this.x;                     },
-        getRight:     function(){   return this.x       + this.width;  },
-        getTop:       function(){   return this.y;                     },
-        getBottom:    function(){   return this.y       + this.height; },
+    // World collision function bank
+    getLeft:      function(){   return this.x;                     },
+    getRight:     function(){   return this.x       + this.width;  },
+    getTop:       function(){   return this.y;                     },
+    getBottom:    function(){   return this.y       + this.height; },
 
-        setLeft:      function(x){  this.x       =   x;                },
-        setRight:     function(x){  this.x       =   x - this.width;   },
-        setTop:       function(y){  this.y       =   y;                },
-        setBottom:    function(y){  this.y       =   y - this.height;  }
+    setLeft:      function(x){  this.x       =   x;                },
+    setRight:     function(x){  this.x       =   x - this.width;   },
+    setTop:       function(y){  this.y       =   y;                },
+    setBottom:    function(y){  this.y       =   y - this.height;  }
 };
 
 // PLANETS -----------------------------------------------------------------------------------------------------------------
-Game.World.Planet = function(x, y, r, c, n){
-    this.color      = c;
+Game.World.Planet = function(x, y, r, n){
     this.radius     = r;
     this.name       = n
     this.x          = x;
