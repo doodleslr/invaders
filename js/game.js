@@ -14,8 +14,8 @@ Game.World = function(){
 
     // World properties
     this.background_color   = 'rgba(61, 61, 106, 0.25)';
-    this.height             = 436;
-    this.width              = 576;
+    this.height             = 480;
+    this.width              = 640;
     this.friction           = 0.96;
 
     this.vector             = new Game.World.Vector();
@@ -50,7 +50,8 @@ Game.World = function(){
             item = document.querySelector('#' + plnt.name);
             
             if(this.vector.checkCol(plyr, plnt)) {
-                this.player.velocity_x = this.player.velocity_y = 0;
+                this.player.velocity_x *= 0.75;
+                this.player.velocity_y *= 0.75;
                 item.style.display = 'block';
             } else {
                 item.style.display = 'none';

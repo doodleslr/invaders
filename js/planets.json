@@ -1,27 +1,27 @@
 {
     "planet": [
         {
-            "name"  : "My-Work",
-            "radius": 30,
-            "x"     : 480,
-            "y"     : 340
-        },
-        {
-            "name"  : "Skills",
-            "radius": 20,
-            "x"     : 70,
-            "y"     : 70
+            "name"  : "Contact",
+            "radius": 100,
+            "x"     : 510,
+            "y"     : 350
         },
         {
             "name"  : "About",
-            "radius": 25,
+            "radius": 100,
             "x"     : 60,
-            "y"     : 370
+            "y"     : 70
         },
         {
-            "name"  : "Contact",
-            "radius": 35,
-            "x"     : 470,
+            "name"  : "Skills",
+            "radius": 100,
+            "x"     : 60,
+            "y"     : 350
+        },
+        {
+            "name"  : "Portfolio",
+            "radius": 100,
+            "x"     : 510,
             "y"     : 80
         }
     ]

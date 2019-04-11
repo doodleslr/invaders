@@ -61,20 +61,6 @@ window.addEventListener('load', function(event){
         display.drawPlanet();
     };
 
-    // const drawPlanet = function(){        
-    //     // draw planets
-    //     for(var i = planetArr.planet.length - 1; i > -1; --i) {
-    //         display.drawPlanet  (   
-    //             planetArr.planet[i].x, 
-    //             planetArr.planet[i].y,
-    //             planetArr.planet[i].name
-    //         );
-    //     };
-    // };
-
-
-
-
     const playerRotate = function(){
         ctx.save();
         ctx.translate   (   game.world.player.x + game.world.player.width / 2, 
@@ -111,13 +97,6 @@ window.addEventListener('load', function(event){
         game.world.update();
     };
 
-    // KEEP RESIZE
-    // var resize = function(event) {
-    //     // display.resize(document.documentElement.clientWidth - 32, document.documentElement.clientHeight - 32, game.world.height / game.world.width);
-    //     // display.render();
-    
-    // };
-
     //handles user input
     const controller   = new Controller();
     //holds game logic
@@ -127,11 +106,9 @@ window.addEventListener('load', function(event){
     //where above modules interact
     const engine       = new Engine(1000/30, update);
     
-    //window.addEventListener('resize', resize);
+    
     window.addEventListener('keydown', keyDownUp);
     window.addEventListener('keyup', keyDownUp);
-
-    //resize();
 
     if(requestJSON()){
         engine.start();

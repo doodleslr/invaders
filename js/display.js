@@ -42,26 +42,6 @@ const Display = function(assetCanvas, plyrCanvas, height, width){
         plyrContext.fillStyle = color;
         plyrContext.fillRect(0, 0, plyrCanvas.width, plyrCanvas.height);
     };
-
-    // KEEP MAY BE ESSENTIAL TO RESIZE IN MAIN
-    // ALSO TO DRAW SPACESHIP AND WORLD OBJECTS
-    // this.render = function() {
-    //     context.drawImage(canvas,
-    //     0, 0, canvas.width, canvas.height,
-    //     0, 0, context.canvas.width, context.canvas.height
-    //     ); 
-    // };
-
-    // this.resize = function(width, height, ratio) {
-
-    //     if(height / width > ratio) {
-    //         this.context.canvas.height = width * ratio;
-    //         this.context.canvas.width = width; 
-    //     } else {
-    //         this.context.canvas.height = height;
-    //         this.context.canvas.width = height * ratio; 
-    //     }
-    // };
 };
 
 Display.prototype = {
