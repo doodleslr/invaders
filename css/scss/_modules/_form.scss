@@ -1,0 +1,22 @@
+@import "_modules/_bits";
+
+.contact-mini {
+    height: 100%;
+    input {
+        display: block;
+        margin: 10px auto;
+    }
+    .form-message {
+
+    }
+}
+
+.contact-block {
+    input {
+        display: inline-block;
+        margin: 10px auto;
+    }
+    .form-message {
+
+    }
+}

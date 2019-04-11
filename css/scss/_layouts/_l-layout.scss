@@ -1,0 +1,7 @@
+
+#container div { z-index: 3; }
+
+#player-canvas, #background-canvas { image-rendering:pixelated; }
+canvas { position: absolute; }
+#player-canvas { z-index: 1 }
+#background-canvas { z-index: 2 }

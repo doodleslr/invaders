@@ -1,0 +1,19 @@
+@import "_modules/_bits";
+
+#container {
+	@include XL {
+		height: 100px;
+	}
+	@include LG {
+		height: 100px;
+	}
+	@include MD {
+		height: 100px;
+	}
+	@include SM {
+		height: 100px;
+	}
+	@include XS {
+		height: 75px;
+	}
+}

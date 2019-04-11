@@ -1,0 +1,57 @@
+//text colours
+$yellow: #db8c4c;
+$purple: #3c3244;
+
+//gradient
+$white: #f5f7fa;
+$blu: #c3cfe2;
+
+//font types
+@mixin main {
+    font-family: 'Raleway', sans-serif;
+}
+@mixin title {
+    font-family:  'Roboto', sans-serif;
+}
+
+//media queries
+$xtra-large:"screen and (min-width: 992px)";
+$large:"(min-width: 768px) and (max-width: 991px)";
+$medium:"(min-width: 600px) and (max-width: 767px)";
+$small:"(min-width: 480px) and (max-width: 599px)";
+$xtra-small:"only screen and (max-width: 479px)";
+
+@mixin XL {
+    @media #{$xtra-large} {
+        @content;
+    }
+}
+@mixin LG {
+    @media #{$large} {
+        @content;
+    }
+}
+@mixin MD {
+    @media #{$medium} {
+        @content;
+    }
+}
+@mixin SM {
+    @media #{$small} {
+        @content;
+    }
+}
+@mixin XS {
+    @media #{$xtra-small} {
+        @content;
+    }
+}
+
+//additional mixins
+@mixin borderRadius {
+    -webkit-border-radius: 5px 15px 5px 15px;
+    -moz-border-radius: 5px 15px 5px 15px;
+    border-radius: 5px 15px 5px 15px;
+}
+//@include borderRadius();
+// w or wo ();

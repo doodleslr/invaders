@@ -1,0 +1,47 @@
+@import "_modules/_bits";
+
+.item-menu {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+	.nav-desktop {
+        max-height: 120px;
+        text-align: center;
+        ul {
+            list-style-type: none;
+            display: inline-flex;
+            li {
+                width: 15vw;
+                min-width: 115px;
+                margin: 0 auto;
+                display: inline-block;
+                a {
+
+                }
+            }
+        }
+        img {
+            display: inline-flex;
+            max-height: 110px;
+        }
+	}   
+}
+
+#My-Work {
+    display: none;
+}
+
+#Contact {
+    display: none;
+}
+#Skills {
+    display: none;
+}
+#About {
+    display: none;
+}
+
+.copyright {
+
+}
