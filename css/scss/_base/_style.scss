@@ -2,15 +2,22 @@
 
 * { box-sizing:border-box; margin:0; padding:0; }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 html { height:100%; width:100%; }
 
 body {
-  align-content:center;
-  background-color:#202830;
-  display:grid;
-  justify-items:center;
-  height:100%;
-  width:100%;
+    align-content:center;
+    background-color: #ffd319;
+    background-image: linear-gradient(to bottom right, #ffd319 0%,#ff901f 19%,#ff2975 51%,#8c1eff 100%);
+    background-attachment: fixed;
+    justify-items:center;
+    height:100%;
+    width:100%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 #container {
@@ -20,6 +27,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10vh auto 0px auto;
 }
 
 a {
@@ -28,8 +36,14 @@ a {
 
 
 button {
-
     &:hover {
 
     }
+}
+
+.active, .hover-active{
+    display: block !important;
+}
+.active-skill {
+    display: flex !important;
 }

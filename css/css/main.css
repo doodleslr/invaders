@@ -19,17 +19,23 @@
   margin: 0;
   padding: 0; }
 
+::-webkit-scrollbar {
+  display: none; }
+
 html {
   height: 100%;
   width: 100%; }
 
 body {
   align-content: center;
-  background-color: #202830;
-  display: grid;
+  background-color: #ffd319;
+  background-image: linear-gradient(to bottom right, #ffd319 0%, #ff901f 19%, #ff2975 51%, #8c1eff 100%);
+  background-attachment: fixed;
   justify-items: center;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto; }
 
 #container {
   height: 480px;
@@ -37,16 +43,26 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin: 10vh auto 0px auto; }
 
 a {
   text-decoration: none; }
 
+.active, .hover-active {
+  display: block !important; }
+
+.active-skill {
+  display: flex !important; }
+
+#Portfolio, #Contact, #Skills, #About {
+  display: none; }
+  #Portfolio h1, #Contact h1, #Skills h1, #About h1 {
+    border-bottom: 1px solid #fff;
+    margin: 10px; }
+
 p {
   font-family: 'Raleway', sans-serif; }
-
-#container div {
-  z-index: 3; }
 
 #player-canvas, #background-canvas {
   image-rendering: pixelated; }
@@ -60,15 +76,96 @@ canvas {
 #background-canvas {
   z-index: 2; }
 
-.contact-mini {
-  height: 100%; }
-  .contact-mini input {
-    display: block;
-    margin: 10px auto; }
+#Portfolio div {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #Portfolio div div {
+    display: inline-flex;
+    margin: 10px 20px; }
+    #Portfolio div div div {
+      display: none; }
+    #Portfolio div div .portfolio-item {
+      position: absolute;
+      display: inline-block;
+      text-align: center;
+      margin: 0; }
 
-.contact-block input {
-  display: inline-block;
-  margin: 10px auto; }
+#Contact a {
+  display: inline;
+  padding: 10px 20px; }
+
+#Skills div {
+  display: flex;
+  flex-direction: column; }
+  #Skills div div {
+    display: inline-flex;
+    margin: 10px 20px;
+    flex-direction: row;
+    align-items: center; }
+    #Skills div div h3 {
+      display: inline-flex;
+      padding: 0px 20px;
+      cursor: pointer; }
+    #Skills div div ul {
+      list-style-type: none;
+      display: none; }
+      #Skills div div ul li {
+        padding: 0px 10px;
+        display: inline-flex; }
+
+#About div {
+  display: flex; }
+  #About div div {
+    display: inline-flex;
+    flex-direction: column; }
+
+form {
+  display: flex;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end; }
+  form div {
+    height: 225px;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; }
+    form div label {
+      padding: 5px 0px; }
+    form div input {
+      background: #ff901f;
+      display: block;
+      padding: 10px;
+      border-style: none; }
+    form div textarea {
+      background: #ff901f;
+      display: block;
+      padding: 10px;
+      border-style: none;
+      height: inherit; }
+  form button {
+    display: inline-flex;
+    height: 50px;
+    width: 100px;
+    padding: 10px; }
+
+#menu {
+  display: flex;
+  height: 5vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8); }
+  #menu ul {
+    margin: 0 auto;
+    list-style-type: none; }
+    #menu ul li {
+      display: inline-block;
+      padding: 10px 20px; }
 
 .item-menu {
   position: fixed;
@@ -89,17 +186,5 @@ canvas {
     .item-menu .nav-desktop img {
       display: inline-flex;
       max-height: 110px; }
-
-#My-Work {
-  display: none; }
-
-#Contact {
-  display: none; }
-
-#Skills {
-  display: none; }
-
-#About {
-  display: none; }
 
 /*# sourceMappingURL=main.css.map */

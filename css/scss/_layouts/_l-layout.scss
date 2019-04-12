@@ -1,7 +1,94 @@
+@import "_modules/_bits";
 
-#container div { z-index: 3; }
+#player-canvas, #background-canvas { 
+    image-rendering: pixelated; 
+}
+canvas { 
+    position: absolute; 
+}
+#player-canvas { 
+    z-index: 1; 
+}
+#background-canvas { 
+    z-index: 2; 
+}
 
-#player-canvas, #background-canvas { image-rendering:pixelated; }
-canvas { position: absolute; }
-#player-canvas { z-index: 1 }
-#background-canvas { z-index: 2 }
+#Portfolio {
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div {
+            display: inline-flex;
+            margin: 10px 20px;
+            img {
+
+            }
+            div {
+                display: none;
+            }
+            .portfolio-item {
+                position: absolute;
+                display: inline-block;
+                text-align: center;
+                margin: 0;
+                h3 {
+                    
+                }
+                a {
+
+                }
+                p {
+
+                }
+            }
+        }
+    }
+}
+
+#Contact {
+    a {
+        display: inline;
+        padding: 10px 20px;
+    }
+}
+#Skills {
+    div {
+        display: flex;
+        flex-direction: column;
+        div {
+            display: inline-flex;
+            margin: 10px 20px;
+            flex-direction: row;
+            align-items: center;
+            h3 {
+                display: inline-flex;
+                padding: 0px 20px;
+                cursor: pointer;
+            }
+            ul {
+                list-style-type: none;
+                display: none;
+                li {
+                    padding: 0px 10px;
+                    display: inline-flex;
+                }
+            }
+        }
+    }
+}
+#About {
+    div {
+        display: flex;
+        div {
+            display: inline-flex;
+            flex-direction: column;
+            h3 {
+                
+            }
+            p {
+
+            }
+        }
+    }
+}

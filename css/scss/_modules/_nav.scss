@@ -1,5 +1,24 @@
 @import "_modules/_bits";
 
+#menu {
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    ul {
+        margin: 0 auto;
+        list-style-type: none;
+        li {
+            display: inline-block;
+            padding: 10px 20px;
+        }
+    }
+}
+
 .item-menu {
     position: fixed;
     width: 100%;
@@ -26,20 +45,6 @@
             max-height: 110px;
         }
 	}   
-}
-
-#My-Work {
-    display: none;
-}
-
-#Contact {
-    display: none;
-}
-#Skills {
-    display: none;
-}
-#About {
-    display: none;
 }
 
 .copyright {

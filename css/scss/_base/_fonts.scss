@@ -1,5 +1,23 @@
 @import "_modules/_bits";
 
+#menu {
+    ul {
+        li {
+            a {
+
+            }
+        }
+    }
+}
+
+#Portfolio, #Contact, #Skills, #About {
+    display: none;
+    h1 {
+        border-bottom: 1px solid #fff;
+        margin: 10px;
+    }
+}
+
 p {
     @include main;
 }

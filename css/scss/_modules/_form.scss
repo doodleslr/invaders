@@ -1,22 +1,39 @@
 @import "_modules/_bits";
 
-.contact-mini {
-    height: 100%;
-    input {
-        display: block;
-        margin: 10px auto;
+form {
+    display: flex;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    div {
+        height: 225px;
+        width: 50%;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        label {
+            padding: 5px 0px;
+        }
+        input {
+            background: #ff901f;
+            display: block;
+            padding: 10px;
+            border-style: none;
+        }
+        textarea {
+            background: #ff901f;
+            display: block;
+            padding: 10px;
+            border-style: none;
+            height: inherit;
+        }
     }
-    .form-message {
 
-    }
-}
-
-.contact-block {
-    input {
-        display: inline-block;
-        margin: 10px auto;
-    }
-    .form-message {
-
+    button {
+        display: inline-flex;
+        height: 50px;
+        width: 100px;
+        padding: 10px;
     }
 }
