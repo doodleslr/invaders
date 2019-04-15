@@ -1,23 +1,72 @@
 @import "_modules/_bits";
 
+#introduction {
+    @include boxShadow;
+    h1 {
+        color: #fff;
+    }
+    h4 {
+        color: #fff;
+    }
+}
 #menu {
     ul {
         li {
             a {
-
+                color: #fff;
             }
         }
     }
 }
-
 #Portfolio, #Contact, #Skills, #About {
     display: none;
     h1 {
-        border-bottom: 1px solid #fff;
-        margin: 10px;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        position: relative;
+        div {
+            position: absolute;
+            border-bottom: 2px solid #ff9966;
+            bottom: 0;
+            width: 35%;
+        }
+    }
+}
+footer {
+    a {
+        color: #fff;
     }
 }
 
+label {
+    @include title;
+}
+input {
+    @include main;
+}
+textarea {
+    @include main;
+}
+button {
+    @include title;
+}
 p {
     @include main;
+    font-weight: 600;
+}
+a {
+    @include main;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+h1 {
+    @include title;
+}
+h2 {
+    @include title;
+}
+h4 {
+    @include title;
+    color: #fff;
 }

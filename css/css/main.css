@@ -1,3 +1,6 @@
+@font-face {
+  font-family: VCR;
+  src: url("vcr.ttf"); }
 @media screen and (min-width: 992px) {
   #container {
     height: 100px; } }
@@ -14,6 +17,9 @@
   #container {
     height: 75px; } }
 
+@font-face {
+  font-family: VCR;
+  src: url("vcr.ttf"); }
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,23 +34,60 @@ html {
 
 body {
   align-content: center;
-  background-color: #ffd319;
-  background-image: linear-gradient(to bottom right, #ffd319 0%, #ff901f 19%, #ff2975 51%, #8c1eff 100%);
+  background-color: #fff;
   background-attachment: fixed;
   justify-items: center;
   height: 100%;
+  width: 100%; }
+
+#introduction {
+  height: 100vh;
   width: 100%;
-  max-width: 1300px;
-  margin: 0 auto; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  z-index: 999;
+  background-image: url("../../images/BG-master.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center; }
+  #introduction h1, #introduction h4 {
+    max-width: 380px;
+    padding: 20px 0px;
+    position: fixed;
+    text-align: justify;
+    letter-spacing: 2px; }
+  #introduction h1 {
+    top: 45%; }
+  #introduction h4 {
+    top: 55%; }
+
+#instruction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; }
+  #instruction p {
+    display: inline-block;
+    padding: 20px;
+    width: 200px; }
 
 #container {
-  height: 480px;
-  width: 600px;
+  height: 520px;
+  width: 680px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10vh auto 0px auto; }
+  margin: 0px auto;
+  background: url("../../images/bg-container.gif");
+  z-index: 1;
+  -webkit-border-radius: 5px 15px 5px 15px;
+  -moz-border-radius: 5px 15px 5px 15px;
+  border-radius: 5px 15px 5px 15px; }
 
 a {
   text-decoration: none; }
@@ -55,15 +98,84 @@ a {
 .active-skill {
   display: flex !important; }
 
+footer {
+  height: 5vh;
+  min-height: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #00001a;
+  -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4); }
+  footer a {
+    display: inline-flex; }
+
+@font-face {
+  font-family: VCR;
+  src: url("vcr.ttf"); }
+#introduction {
+  -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4); }
+  #introduction h1 {
+    color: #fff; }
+  #introduction h4 {
+    color: #fff; }
+
+#menu ul li a {
+  color: #fff; }
+
 #Portfolio, #Contact, #Skills, #About {
   display: none; }
   #Portfolio h1, #Contact h1, #Skills h1, #About h1 {
-    border-bottom: 1px solid #fff;
-    margin: 10px; }
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    position: relative; }
+    #Portfolio h1 div, #Contact h1 div, #Skills h1 div, #About h1 div {
+      position: absolute;
+      border-bottom: 2px solid #ff9966;
+      bottom: 0;
+      width: 35%; }
+
+footer a {
+  color: #fff; }
+
+label {
+  font-family: 'VCR', sans-serif; }
+
+input {
+  font-family: 'Quicksand', sans-serif; }
+
+textarea {
+  font-family: 'Quicksand', sans-serif; }
+
+button {
+  font-family: 'VCR', sans-serif; }
 
 p {
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; }
 
+a {
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600; }
+
+h1 {
+  font-family: 'VCR', sans-serif; }
+
+h2 {
+  font-family: 'VCR', sans-serif; }
+
+h4 {
+  font-family: 'VCR', sans-serif;
+  color: #fff; }
+
+@font-face {
+  font-family: VCR;
+  src: url("vcr.ttf"); }
 #player-canvas, #background-canvas {
   image-rendering: pixelated; }
 
@@ -71,48 +183,72 @@ canvas {
   position: absolute; }
 
 #player-canvas {
-  z-index: 1; }
+  z-index: 3; }
 
 #background-canvas {
-  z-index: 2; }
+  z-index: 4; }
+
+#instruction, #container, #content {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+#overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  background-image: url("../../images/scanlines.png");
+  pointer-events: none; }
 
 #Portfolio div {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column; }
   #Portfolio div div {
     display: inline-flex;
     margin: 10px 20px; }
     #Portfolio div div div {
       display: none; }
     #Portfolio div div .portfolio-item {
-      position: absolute;
-      display: inline-block;
-      text-align: center;
-      margin: 0; }
+      display: flex;
+      margin: 10px 0px;
+      max-width: 300px; }
+      #Portfolio div div .portfolio-item h2 {
+        padding: 20px 0px; }
+      #Portfolio div div .portfolio-item a, #Portfolio div div .portfolio-item p {
+        padding: 10px 0px; }
 
 #Contact a {
   display: inline;
   padding: 10px 20px; }
 
-#Skills div {
+#Skills .skill-list {
   display: flex;
   flex-direction: column; }
-  #Skills div div {
+  #Skills .skill-list div {
     display: inline-flex;
     margin: 10px 20px;
     flex-direction: row;
     align-items: center; }
-    #Skills div div h3 {
+    #Skills .skill-list div h2 {
       display: inline-flex;
       padding: 0px 20px;
       cursor: pointer; }
-    #Skills div div ul {
+    #Skills .skill-list div ul {
       list-style-type: none;
       display: none; }
-      #Skills div div ul li {
+      #Skills .skill-list div ul li {
         padding: 0px 10px;
         display: inline-flex; }
+#Skills .skill-p {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  #Skills .skill-p p {
+    display: flex;
+    width: 450px;
+    padding: 0px 15px; }
 
 #About div {
   display: flex; }
@@ -120,6 +256,9 @@ canvas {
     display: inline-flex;
     flex-direction: column; }
 
+@font-face {
+  font-family: VCR;
+  src: url("vcr.ttf"); }
 form {
   display: flex;
   padding: 10px 20px;
@@ -135,12 +274,18 @@ form {
     form div label {
       padding: 5px 0px; }
     form div input {
-      background: #ff901f;
+      background-color: #00001a;
+      -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+      -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+      box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
       display: block;
       padding: 10px;
       border-style: none; }
     form div textarea {
-      background: #ff901f;
+      background-color: #00001a;
+      -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+      -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+      box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
       display: block;
       padding: 10px;
       border-style: none;
@@ -151,15 +296,21 @@ form {
     width: 100px;
     padding: 10px; }
 
+@font-face {
+  font-family: VCR;
+  src: url("vcr.ttf"); }
 #menu {
   display: flex;
   height: 5vh;
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   align-items: center;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.8); }
+  z-index: 900;
+  background-color: #00001a;
+  -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4); }
   #menu ul {
     margin: 0 auto;
     list-style-type: none; }

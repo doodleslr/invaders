@@ -16,13 +16,15 @@ form {
             padding: 5px 0px;
         }
         input {
-            background: #ff901f;
+            background-color: #00001a;
+            @include boxShadow;
             display: block;
             padding: 10px;
             border-style: none;
         }
         textarea {
-            background: #ff901f;
+            background-color: #00001a;
+            @include boxShadow;
             display: block;
             padding: 10px;
             border-style: none;

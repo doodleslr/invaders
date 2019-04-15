@@ -10,24 +10,66 @@ html { height:100%; width:100%; }
 
 body {
     align-content:center;
-    background-color: #ffd319;
-    background-image: linear-gradient(to bottom right, #ffd319 0%,#ff901f 19%,#ff2975 51%,#8c1eff 100%);
+    background-color: #fff;
+    //background-image: linear-gradient(to bottom right, #ffd319 0%,#ff901f 19%,#ff2975 51%,#8c1eff 100%);
     background-attachment: fixed;
     justify-items:center;
     height:100%;
     width:100%;
-    max-width: 1300px;
-    margin: 0 auto;
+}
+
+#introduction {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    z-index: 999;
+    background-image: url("../../images/BG-master.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    h1, h4 {
+        max-width: 380px;
+        padding: 20px 0px;
+        position: fixed;
+        text-align: justify;
+        letter-spacing: 2px;
+    }
+    h1 {
+        top: 45%;
+    }
+    h4 {
+        top: 55%;
+    }
+}
+
+#instruction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    p {
+        display: inline-block;
+        padding: 20px;
+        width: 200px;
+    }
 }
 
 #container {
-    height: 480px;
-    width: 600px;
+    height: 520px;
+    width: 680px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10vh auto 0px auto;
+    margin: 0px auto;
+    background: url("../../images/bg-container.gif");
+    z-index: 1;
+    @include borderRadius;
 }
 
 a {
@@ -46,4 +88,17 @@ button {
 }
 .active-skill {
     display: flex !important;
+}
+
+footer {
+    height: 5vh;
+    min-height: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #00001a;
+    @include boxShadow;
+    a {
+        display: inline-flex;
+    }
 }

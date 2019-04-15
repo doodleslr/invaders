@@ -7,11 +7,16 @@ $white: #f5f7fa;
 $blu: #c3cfe2;
 
 //font types
+
+@font-face {
+	font-family: VCR; 
+	src: url("vcr.ttf");
+}
 @mixin main {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 @mixin title {
-    font-family:  'Roboto', sans-serif;
+    font-family:  'VCR', sans-serif;
 }
 
 //media queries
@@ -53,5 +58,9 @@ $xtra-small:"only screen and (max-width: 479px)";
     -moz-border-radius: 5px 15px 5px 15px;
     border-radius: 5px 15px 5px 15px;
 }
-//@include borderRadius();
-// w or wo ();
+
+@mixin boxShadow {
+    -moz-box-shadow: inset 0px 0px 20px 0px  rgba(230, 230, 230, 0.4);
+    -webkit-box-shadow: inset 0px 0px 20px 0px  rgba(230, 230, 230, 0.4);
+    box-shadow: inset 0px 0px 20px 0px  rgba(230, 230, 230, 0.4);
+}

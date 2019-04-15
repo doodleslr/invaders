@@ -13,7 +13,7 @@ Game.prototype = { constructor : Game };
 Game.World = function(){
 
     // World properties
-    this.background_color   = 'rgba(61, 61, 106, 0.25)';
+    this.background_color   = 'rgba(0, 0, 0, 0.05)';
     this.height             = 480;
     this.width              = 640;
     this.friction           = 0.96;

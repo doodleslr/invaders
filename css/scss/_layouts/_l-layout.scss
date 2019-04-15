@@ -7,17 +7,31 @@ canvas {
     position: absolute; 
 }
 #player-canvas { 
-    z-index: 1; 
+    z-index: 3; 
 }
 #background-canvas { 
-    z-index: 2; 
+    z-index: 4; 
 }
 
+#instruction, #container, #content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    background-image: url("../../images/scanlines.png");
+    pointer-events: none;
+}
 #Portfolio {
     div {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         div {
             display: inline-flex;
             margin: 10px 20px;
@@ -28,18 +42,14 @@ canvas {
                 display: none;
             }
             .portfolio-item {
-                position: absolute;
-                display: inline-block;
-                text-align: center;
-                margin: 0;
-                h3 {
-                    
+                display: flex;
+                margin: 10px 0px;
+                max-width: 300px;
+                h2 {
+                    padding: 20px 0px;
                 }
-                a {
-
-                }
-                p {
-
+                a, p {
+                    padding: 10px 0px;
                 }
             }
         }
@@ -53,7 +63,7 @@ canvas {
     }
 }
 #Skills {
-    div {
+    .skill-list {
         display: flex;
         flex-direction: column;
         div {
@@ -61,7 +71,7 @@ canvas {
             margin: 10px 20px;
             flex-direction: row;
             align-items: center;
-            h3 {
+            h2 {
                 display: inline-flex;
                 padding: 0px 20px;
                 cursor: pointer;
@@ -74,6 +84,16 @@ canvas {
                     display: inline-flex;
                 }
             }
+        }
+    }
+    .skill-p {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        p {
+            display: flex;
+            width: 450px;
+            padding: 0px 15px;
         }
     }
 }
