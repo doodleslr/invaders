@@ -96,7 +96,25 @@
         </div>
         <div id="Skills">
             <h1>Skills<div class="border"></div></h1>
-            <p>Icon list of languages</p>
+            <div class="icon-list">
+                <ul>
+                    <li><img src='images/icons/1.gif'/></li>
+                    <li><img src='images/icons/2.gif'/></li>
+                    <li><img src='images/icons/3.gif'/></li>
+                    <li><img src='images/icons/4.gif'/></li>
+                    <li><img src='images/icons/5.gif'/></li>
+                    <li><img src='images/icons/6.gif'/></li>
+                    <li><img src='images/icons/7.gif'/></li>
+                    <li><img src='images/icons/8.gif'/></li>
+                    <li><img src='images/icons/9.gif'/></li>
+                    <li><img src='images/icons/10.gif'/></li>
+                    <li><img src='images/icons/11.gif'/></li>
+                    <li><img src='images/icons/12.gif'/></li>
+                    <li><img src='images/icons/13.gif'/></li>
+                    <li><img src='images/icons/14.gif'/></li>
+                    <li><img src='images/icons/15.gif'/></li>
+                </ul>
+            </div>
             <div class="skill-list">
                 <div onclick="showSkill(this)">
                     <h2>Languages</h2>
@@ -138,12 +156,12 @@
             <h1>About Me<div class="border"></div></h1>
             <div>
                 <div>
-                    <h3>Hey there, nice to meet you! My name is <span>Daniel La Rocca</span></h3>
-                    <p>I'm a <span>Front-End Developer.</span> My learning journay has at times been difficult but i have regularly been inspired by a little known jogger character in the TV show Bojack Horseman who said</p>
+                    <h3>Hey there, nice to meet you! My name is Daniel La Rocca</h3>
+                    <p>I'm a Front-End Developer. I am a determined, results-driven person who always enjoys a challenge.<br>I have knowledge in design and Front-End Development with ongoing self-education in additional Front and Back-End technologies.<br>My learning journey has at times been difficult but i have regularly been inspired by a quote from a minor character in a TV show who said...</p>
 
-                    <h4>"It gets easier. Every day it gets a little easier. But you gotta do it every day. That's the hard part. But it does get easier."</h4>
+                    <h4>"It gets easier. Every day it gets a little easier.<br>But you gotta do it every day. That's the hard part.<br>But it does get easier."</h4>
 
-                    <p>My main take away from these words were that anything can be done, by leaps and bounds or even incrementally over time, and as a result I try, every day to at least write one line, because the world wasn't built in a day.<br><br>Growing up seeing the advent of the internet, i was attracted towards development where now I get to enjoy the best of both worlds. My main education was in Game Development but it extended to application design and UX design, the culmination of this was creating a startup mobile application studio with some friends. Fortunately we <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=93036192' target="_blank">released one game!</a> before we shut down.<br><br>When I'm not coding you'll likely find me cooking, working, reading science fiction, playing a few games, or backpacking my way around the world.</p>
+                    <p>This has become a mantra for me and helped me realise anything can be done, by leaps and bounds or even incrementally over time. As a result I try, every day to at least write something, anything, because the world wasn't built in a day.<br><br>Growing up seeing the advent of the internet, i was attracted towards development where now I get to enjoy the best of both worlds.<br>My main education was in Game Development but it extended to application design and UX design, the culmination of this was creating a startup mobile application studio with some friends. Fortunately we <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=93036192' target="_blank">released one game!</a> before we shut down.<br><br>When I'm not coding you'll likely find me cooking, working, reading science fiction, playing a few games, or backpacking my way around the world.</p>
                 </div>
                 <div>
                     <img src='images/Daniel.jpg'/>
