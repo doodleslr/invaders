@@ -1,5 +1,9 @@
 @import "_modules/_bits";
 
+body {
+    color: $darkblu;
+}
+
 #introduction {
     @include boxShadow;
     h1 {
@@ -26,7 +30,7 @@
         position: relative;
         div {
             position: absolute;
-            border-bottom: 2px solid #ff9966;
+            border-bottom: 3px dashed $pink;
             bottom: 0;
             width: 35%;
         }
@@ -43,30 +47,39 @@ label {
 }
 input {
     @include main;
+    font-weight: 600;
+    color: $darkblu;
+}
+::placeholder {
+    color: #fff;
+    font-weight: 300;
 }
 textarea {
     @include main;
+    color: $darkblu;
+    font-weight: 600;
 }
 button {
     @include title;
+    color: $darkblu;
 }
 p {
     @include main;
-    font-weight: 600;
 }
 a {
     @include main;
     text-decoration: none;
     cursor: pointer;
     font-weight: 600;
+    color: $pink;
+    &:hover {
+        transform: translateY(-1px);
+    }
 }
-h1 {
-    @include title;
+ul {
+    @include main;
+    font-weight: 600;
 }
-h2 {
+h1, h2, h3, h4 {
     @include title;
-}
-h4 {
-    @include title;
-    color: #fff;
 }

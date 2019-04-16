@@ -16,19 +16,23 @@ form {
             padding: 5px 0px;
         }
         input {
-            background-color: #00001a;
+            background-color: $darkblu;
+            background-image: linear-gradient(to bottom right, $pink , $gold);
             @include boxShadow;
             display: block;
             padding: 10px;
             border-style: none;
+            @include borderRadius;
         }
         textarea {
-            background-color: #00001a;
+            background-color: $darkblu;
+            background-image: linear-gradient(to bottom right, $pink , $gold);
             @include boxShadow;
             display: block;
             padding: 10px;
             border-style: none;
             height: inherit;
+            @include borderRadius;
         }
     }
 
@@ -37,5 +41,13 @@ form {
         height: 50px;
         width: 100px;
         padding: 10px;
+        margin: 10px;
+        border-style: none;
+        background-color: $gold;
+        background-image: linear-gradient(to bottom right, $pink , $gold);
+        @include borderRadius;
+        &:hover {
+            transform: translateY(-2px);
+        }
     }
 }

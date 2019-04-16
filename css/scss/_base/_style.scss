@@ -11,11 +11,23 @@ html { height:100%; width:100%; }
 body {
     align-content:center;
     background-color: #fff;
-    //background-image: linear-gradient(to bottom right, #ffd319 0%,#ff901f 19%,#ff2975 51%,#8c1eff 100%);
-    background-attachment: fixed;
     justify-items:center;
     height:100%;
     width:100%;
+}
+
+#overlay {
+    background-image: url("../../images/scanlines.png");
+    pointer-events: none;
+    animation: noise 1.5s infinite linear;
+}
+@keyframes noise {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 2000px;
+    }
 }
 
 #introduction {
@@ -25,7 +37,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    z-index: 999;
     background-image: url("../../images/BG-master.gif");
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,12 +81,12 @@ body {
     background: url("../../images/bg-container.gif");
     z-index: 1;
     @include borderRadius;
+
 }
 
-a {
-    text-decoration: none;
+img {
+    @include borderRadius;
 }
-
 
 button {
     &:hover {
@@ -91,6 +102,7 @@ button {
 }
 
 footer {
+    margin-top: 50px;
     height: 5vh;
     min-height: 25px;
     display: flex;
