@@ -4,14 +4,15 @@ const Controller = function(){
     this.left = new Controller.ButtonInput();
     this.right = new Controller.ButtonInput();
 
-    this.keyDownUp = function(event, keycode) {
+    this.keyDownUp = function(event, keycode, e) {
+        
 
         var buttonDown = (event == 'keydown') ? true : false;
 
         switch(keycode){
-            case 37: this.left.getInput(buttonDown); break;
-            case 38: this.up.getInput(buttonDown); break;
-            case 39: this.right.getInput(buttonDown); break;
+            case 37: e.preventDefault(); this.left.getInput(buttonDown); break;
+            case 38: e.preventDefault(); this.up.getInput(buttonDown); break;
+            case 39: e.preventDefault(); this.right.getInput(buttonDown); break;
         }
     };
 };

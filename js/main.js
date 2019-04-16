@@ -78,7 +78,7 @@ window.addEventListener('load', function(event){
         ctx.restore();
     };
 
-    const keyDownUp = function(event) { controller.keyDownUp(event.type, event.keyCode); };
+    const keyDownUp = function(event) { controller.keyDownUp(event.type, event.keyCode, event); };
 
     const update = function(){
         // player controls
