@@ -27,6 +27,7 @@
     <div id="instruction">
         <p>Use your keyboard arrow keys to navigate the planets.</p>
         <p>Otherwise the menu above can help you.</p>
+        <p id="mobile-instruction"> Unfortunately this does not work on mobile or tablet right now, but touch screen support will be added <span>in the future!</span></p>
     </div>
     <div id='container'>
         <canvas id='background-canvas'></canvas>
@@ -87,7 +88,7 @@
                     <label>Message:</label>
                     <textarea id="message" name="message" placeholder="In the game of chess, you can never let your adversary see your pieces."></textarea>
                 </div>
-                <button><b>Send</b></button>
+                <button>Send</button>
             </form>
             <div class="textFlairD" style="display:none;text-align: center;" id="thankyou_message">
                 <h1 class="textTitle" style="font-size: 24px;color: #f26522;"><i>Your request has been submitted.</i></h1>
@@ -143,7 +144,7 @@
                         <li>Photoshop</li>
                         <li>Illustrator</li>
                         <li>Blender</li>
-                        <li>Autodesk Maya</li>
+                        <li>Maya</li>
                     </ul>
                 </div>
             </div>
@@ -163,12 +164,21 @@
 
                     <p>This has become a mantra for me and helped me realise anything can be done, by leaps and bounds or even incrementally over time. As a result I try, every day to at least write something, anything, because the world wasn't built in a day.<br><br>Growing up seeing the advent of the internet, i was attracted towards development where now I get to enjoy the best of both worlds.<br>My main education was in Game Development but it extended to application design and UX design, the culmination of this was creating a startup mobile application studio with some friends. Fortunately we <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=93036192' target="_blank">released one game!</a> before we shut down.<br><br>When I'm not coding you'll likely find me cooking, working, reading science fiction, playing a few games, or backpacking my way around the world.</p>
                 </div>
-                <div>
+                <div style="text-align: center">
                     <img src='images/Daniel.jpg'/>
                 </div>
             </div>
         </div>
     </div>
+
+    <nav id="footer-menu">
+        <ul>
+            <li><a onclick="showItem(this)" href="#Portfolio">Portfolio</a></li>
+            <li><a onclick="showItem(this)" href="#Skills">Skills</a></li>
+            <li><a onclick="showItem(this)" href="#About">About Me</a></li>
+            <li><a onclick="showItem(this)" href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
 </body>
 
 <footer>
