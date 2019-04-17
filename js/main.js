@@ -12,9 +12,7 @@ window.addEventListener('load', function(event){
         request.responseType = "json";
         request.send();
 
-        request.onload = function(){
-            planetArr = request.response;
-        };
+        request.onload = function(){ planetArr = request.response; };
         return true;
         
     }
@@ -27,13 +25,10 @@ window.addEventListener('load', function(event){
             executed = true;
             genPlanetCol();
             genPlanetDraw();
-        } else {
-            drawPlanet();
-        }
+        } else { drawPlanet(); }
     }
 
     const genPlanetCol = function(){
-        // generate planet collision
         for(var i = planetArr.planet.length - 1; i > -1; --i) {
             game.world.planetArr(
                 planetArr.planet[i].x, 
@@ -44,8 +39,7 @@ window.addEventListener('load', function(event){
         };
     };
 
-    const genPlanetDraw = function(){        
-        // generate planet images
+    const genPlanetDraw = function(){
         for(var i = planetArr.planet.length - 1; i > -1; --i) {
             display.genPlanet  (   
                 planetArr.planet[i].x, 
@@ -56,10 +50,7 @@ window.addEventListener('load', function(event){
         };
     };
 
-    const drawPlanet = function(){
-        // draw planet images
-        display.drawPlanet();
-    };
+    const drawPlanet = function(){ display.drawPlanet(); };
 
     const playerRotate = function(){
         ctx.save();
@@ -69,11 +60,7 @@ window.addEventListener('load', function(event){
         ctx.rotate(game.world.player.angle);
         display.drawPlayer  (
                                 game.world.player.width /-2,
-                                game.world.player.height / -2,
-                                game.world.player.width,
-                                game.world.player.height,
-                                game.world.player.color,
-                                game.world.player.angle
+                                game.world.player.height / -2
                             );
         ctx.restore();
     };
@@ -81,17 +68,14 @@ window.addEventListener('load', function(event){
     const keyDownUp = function(event) { controller.keyDownUp(event.type, event.keyCode, event); };
 
     const update = function(){
-        // player controls
         if(controller.left.active || controller.right.active || controller.up.active)  {
             game.world.player.update(controller);
         };
 
         runOnceAndThen();
 
-        // world background
         display.bg(game.world.background_color);
 
-        // player rotation
         playerRotate();
 
         game.world.update();
@@ -110,9 +94,5 @@ window.addEventListener('load', function(event){
     window.addEventListener('keydown', keyDownUp);
     window.addEventListener('keyup', keyDownUp);
 
-    if(requestJSON()){
-        engine.start();
-    } else {
-        alert(reqUrl + ' array not found');
-    };
+    if(requestJSON()){ engine.start(); } else { alert(reqUrl + ' array not found'); };
 });

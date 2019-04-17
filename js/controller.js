@@ -5,8 +5,6 @@ const Controller = function(){
     this.right = new Controller.ButtonInput();
 
     this.keyDownUp = function(event, keycode, e) {
-        
-
         var buttonDown = (event == 'keydown') ? true : false;
 
         switch(keycode){
@@ -17,9 +15,7 @@ const Controller = function(){
     };
 };
 
-Controller.prototype = {
-    contructor : Controller
-}
+Controller.prototype = { contructor : Controller }
 
 Controller.ButtonInput = function(){
     this.active = false;

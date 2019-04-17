@@ -1,10 +1,6 @@
 const Game = function(){
-
     this.world = new Game.World();
-
-    this.update = function(){
-        this.world.update();
-    }
+    this.update = function(){ this.world.update(); }
 };
 
 Game.prototype = { constructor : Game };
@@ -32,8 +28,8 @@ Game.World = function(){
     var plyr                = this.player;
 
     this.update             = function(){
-            this.player.velocity_x *= this.friction;
-            this.player.velocity_y *= this.friction;
+        this.player.velocity_x *= this.friction;
+        this.player.velocity_y *= this.friction;
 
         // can optimise player velocity drift-off decay much faster
         // with 4 decimal places rather than infinite
@@ -86,12 +82,12 @@ Game.World.Player = function(x, y, a){
 
     // Player properties
     this.height     = 20;
-    this.width      = 8;
+    this.width      = 10;
     this.color      = '#ff0000';
     this.radius     = 8;
     
     // Player movement
-    this.speed      = 1;
+    this.speed      = 0.7;
     this.x          = x;
     this.y          = y;
     this.velocity_x = 0;
@@ -122,7 +118,6 @@ Game.World.Player = function(x, y, a){
 
 Game.World.Player.prototype = {
     constructor: Game.World.Player,
-
     // World collision function bank
     getLeft:      function(){   return this.x;                     },
     getRight:     function(){   return this.x       + this.width;  },
@@ -156,9 +151,7 @@ Game.World.Vector.prototype = {
         this.x = obj1.x - obj2.x;
         this.y = obj1.y - obj2.y;
 
-        if(Math.sqrt(this.x * this.x + this.y * this.y) < obj1.radius + obj2.radius){
-            return true;
-        }
+        if(Math.sqrt(this.x * this.x + this.y * this.y) < obj1.radius + obj2.radius){ return true; }
         return false;
     }
 };
