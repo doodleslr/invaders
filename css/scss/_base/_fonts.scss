@@ -13,7 +13,7 @@ body {
         color: #fff;
     }
 }
-#menu {
+#menu, #footer-menu {
     ul {
         li {
             a {
@@ -48,7 +48,7 @@ label {
 input {
     @include main;
     font-weight: 600;
-    color: $darkblu;
+    color: #fff;
 }
 ::placeholder {
     color: #fff;
@@ -56,15 +56,19 @@ input {
 }
 textarea {
     @include main;
-    color: $darkblu;
+    color: #fff;
     font-weight: 600;
 }
 button {
     @include title;
-    color: $darkblu;
+    color: #fff;
+    letter-spacing: 2px;
 }
 p {
     @include main;
+}
+span {
+    @include title;
 }
 a {
     @include main;

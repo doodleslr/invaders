@@ -19,13 +19,14 @@ canvas {
 #background-canvas { 
     z-index: 4; 
 }
-
-#introduction {
-    z-index: 1;
-}
+// #introduction {
+//     h1, h4 {
+//         z-index: 1;
+//     }
+// }
 #instruction, #content {
     max-width: 1200px;
-    padding: 0px 15px;
+    padding: 10px 15px;
     margin: 0 auto;
 }
 #container {
@@ -33,10 +34,17 @@ canvas {
     margin: 0 auto 50px auto;
 }
 #instruction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     p {
         z-index: 2;
+        display: inline-block;
+        padding: 10px;
+        width: 200px;
     }
 }
+
 #Portfolio {
     div {
         display: flex;
@@ -71,6 +79,10 @@ canvas {
     a {
         display: inline;
         padding: 10px 20px;
+        transition: transform 0.2s ease;
+        &:hover {
+            transform: translateY(-2px);
+        }
     }
     form {
         div {
@@ -81,8 +93,7 @@ canvas {
 #Skills {
     .icon-list {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
         justify-content: center;
         ul {
             z-index: 2;
@@ -106,8 +117,10 @@ canvas {
                 display: inline-flex;
                 padding: 0px 20px;
                 cursor: pointer;
+                transition: color 0.2s ease, transform 0.2s ease;
                 &:hover {
                     transform: translateY(-2px);
+                    color: $pink;
                 }
             }
             ul {

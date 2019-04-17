@@ -17,7 +17,6 @@ form {
         }
         input {
             background-color: $darkblu;
-            background-image: linear-gradient(to bottom right, $pink , $gold);
             @include boxShadow;
             display: block;
             padding: 10px;
@@ -26,7 +25,6 @@ form {
         }
         textarea {
             background-color: $darkblu;
-            background-image: linear-gradient(to bottom right, $pink , $gold);
             @include boxShadow;
             display: block;
             padding: 10px;
@@ -43,11 +41,12 @@ form {
         padding: 10px;
         margin: 10px;
         border-style: none;
-        background-color: $gold;
-        background-image: linear-gradient(to bottom right, $pink , $gold);
+        background-color: $darkblu;
+        transition: background-color 0.2s ease, transform 0.2s ease;
         @include borderRadius;
         &:hover {
             transform: translateY(-2px);
+            background-color: $pink;
         }
     }
 }

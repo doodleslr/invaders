@@ -43,6 +43,8 @@ body {
     background-position: center;
     background-attachment: fixed;
     text-align: center;
+    position: relative;
+    z-index: -1;
     h1, h4 {
         max-width: 380px;
         padding: 20px 0px;
@@ -57,22 +59,9 @@ body {
         top: 55%;
     }
 }
-
-#instruction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    p {
-        display: inline-block;
-        padding: 20px;
-        width: 200px;
-    }
-}
-
 #container {
-    height: 520px;
-    width: 680px;
+    // height: 520px;
+    // width: 680px;
     position: relative;
     display: flex;
     align-items: center;
@@ -86,12 +75,6 @@ body {
 
 img {
     @include borderRadius;
-}
-
-button {
-    &:hover {
-
-    }
 }
 
 .active, .hover-active{
@@ -112,5 +95,12 @@ footer {
     @include boxShadow;
     a {
         display: inline-flex;
+    }
+}
+
+a {
+    transition: transform 0.2s ease;
+    &:hover {
+        transform: translateY(-2px);
     }
 }

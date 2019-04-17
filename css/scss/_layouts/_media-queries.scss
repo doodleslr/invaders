@@ -1,19 +1,288 @@
 @import "_modules/_bits";
-
+/* canvas responsiveness */
 #container {
 	@include XL {
-		height: 100px;
+        width: 900px;
+		height: 675px;
 	}
 	@include LG {
-		height: 100px;
+        width: 700px;
+		height: 525px;
 	}
 	@include MD {
-		height: 100px;
+        width: 600px;
+		height: 450px;
 	}
 	@include SM {
-		height: 100px;
+        width: 480px;
+		height: 360px;
 	}
 	@include XS {
-		height: 75px;
+        width: 300px;
+		height: 225px;
 	}
+}
+#background-canvas, #player-canvas {
+	@include XL {
+        width: 840px;
+		height: 630px;
+	}
+	@include LG {
+        width: 640px;
+		height: 480px;
+	}
+	@include MD {
+        width: 540px;
+		height: 405px;
+	}
+	@include SM {
+        width: 420px;
+		height: 315px;
+	}
+	@include XS {
+        width: 280px;
+		height: 210px;
+	}
+}
+/* end canvas responsiveness */
+
+body #introduction {
+    h1, h4 {
+        @include SM {
+            padding: 20px;
+            letter-spacing: 1px;
+        }
+        @include XS {
+            padding: 20px;
+            letter-spacing: 1px;
+        }
+    }
+    h1 {
+        @include SM {
+            top: 30%;
+        }
+        @include XS {
+            top: 30%;
+        }
+    }
+}
+body #menu {
+    @include SM {
+        height: 10vh;
+    }
+    @include XS {
+        height: 10vh;
+    }
+    ul {
+        li {
+            @include SM {
+                padding: 10px
+            }
+            @include XS {
+                padding: 10px;
+            }
+        }
+    }
+}
+body #instruction {
+    #mobile-instruction {
+        @include XL {
+            display: none;
+        }
+        @include LG {
+            display: block;
+        }
+        @include MD {
+            display: block;
+        }
+        @include SM {
+            display: block;
+        }
+        @include XS {
+            display: block;
+        }
+    }
+}
+body #content {
+    #Portfolio, #Skills, #About, #Contact {
+        h1 {
+            .border {
+                @include SM {
+                    width: 65%;
+                }
+                @include XS {
+                    width: 75%;
+                }
+            }
+        }
+    }
+    #Portfolio {
+        div {
+            div {
+                img {
+                    @include SM {
+                        max-width: 300px;
+                    }
+                    @include XS {
+                        max-width: 300px;
+                    }
+                }
+                .portfolio-item {
+                    a {
+                        @include SM {
+                            font-size: 14px;
+                        }
+                        @include XS {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #Skills {
+        .skill-list {
+            @include SM {
+                padding: 10px 0px;
+            }
+            @include XS {
+                padding: 10px 0px;
+            }
+            div {
+                @include SM {
+                    margin: 5px 0px;
+                    flex-direction: column;
+                }
+                @include XS {
+                    margin: 5px 0px;
+                    flex-direction: column;
+                }
+                h2 {
+                    @include SM {
+                        animation: shake 5s infinite linear;
+                    }
+                    @include XS {
+                        animation: shake 5s infinite linear;
+                    }
+                }
+                ul {
+                    li {
+                        @include SM {
+                            padding: 0px 3px;
+                            font-size: 15px;
+                        }
+                        @include XS {
+                            padding: 0px 3px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        .skill-p {
+            @include MD {
+                display: block;
+            }
+            @include SM {
+                display: block;
+            }
+            @include XS {
+                display: block;
+            }
+            p {
+                @include MD {
+                    width: auto;
+                    padding: 10px;
+                }
+                @include SM {
+                    width: auto;
+                    padding: 10px;
+                }
+                @include XS {
+                    width: auto;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    #About {
+        div {
+            @include MD {
+                display: block;
+            }
+            @include SM {
+                display: block;
+            }
+            @include XS {
+                display: block;
+            }
+            div {
+                @include SM {
+                    display: block;
+                }
+                @include XS {
+                    display: block;
+                }
+            }
+        }
+    }
+    #Contact {
+        a {
+            @include SM {
+                display: block;
+            }
+            @include XS {
+                display: block;
+            }
+        }
+        form {
+            @include XS {
+                padding: 0px;
+            }
+            div {
+                @include SM {
+                    width: 100%;
+                }
+                @include XS {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+body #footer-menu {
+    @include MD {
+        display: flex;
+    }
+    @include SM {
+        display: flex;
+    }
+    @include XS {
+        display: flex;
+    }
+}
+body footer {
+    @include MD {
+        margin-top: 0px;
+    }
+    @include SM {
+        margin-top: 0px;
+    }
+    @include XS {
+        margin-top: 0px;
+    }
+    a {
+        @include XS {
+            font-size: 14px;
+        }
+    }
+}
+
+@keyframes shake {
+    0%,100% {
+        transform: translateY(-1px);
+    }
+    1%,99% {
+        transform: translateY(1px);
+    }
 }
