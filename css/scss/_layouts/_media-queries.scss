@@ -256,9 +256,11 @@ body #footer-menu {
     }
     @include SM {
         display: flex;
+        height: 10vh;
     }
     @include XS {
         display: flex;
+        height: 10vh;
     }
 }
 body footer {

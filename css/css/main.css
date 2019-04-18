@@ -1,22 +1,222 @@
 @font-face {
   font-family: VCR;
   src: url("vcr.ttf"); }
+/* canvas responsiveness */
 @media screen and (min-width: 992px) {
   #container {
-    height: 100px; } }
+    width: 900px;
+    height: 675px; } }
 @media (min-width: 768px) and (max-width: 991px) {
   #container {
-    height: 100px; } }
+    width: 700px;
+    height: 525px; } }
 @media (min-width: 600px) and (max-width: 767px) {
   #container {
-    height: 100px; } }
+    width: 600px;
+    height: 450px; } }
 @media (min-width: 480px) and (max-width: 599px) {
   #container {
-    height: 100px; } }
+    width: 480px;
+    height: 360px; } }
 @media only screen and (max-width: 479px) {
   #container {
-    height: 75px; } }
+    width: 300px;
+    height: 225px; } }
 
+@media screen and (min-width: 992px) {
+  #background-canvas, #player-canvas {
+    width: 840px;
+    height: 630px; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  #background-canvas, #player-canvas {
+    width: 640px;
+    height: 480px; } }
+@media (min-width: 600px) and (max-width: 767px) {
+  #background-canvas, #player-canvas {
+    width: 540px;
+    height: 405px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  #background-canvas, #player-canvas {
+    width: 420px;
+    height: 315px; } }
+@media only screen and (max-width: 479px) {
+  #background-canvas, #player-canvas {
+    width: 280px;
+    height: 210px; } }
+
+/* end canvas responsiveness */
+@media (min-width: 480px) and (max-width: 599px) {
+  body #introduction h1, body #introduction h4 {
+    padding: 20px;
+    letter-spacing: 1px; } }
+@media only screen and (max-width: 479px) {
+  body #introduction h1, body #introduction h4 {
+    padding: 20px;
+    letter-spacing: 1px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #introduction h1 {
+    top: 30%; } }
+@media only screen and (max-width: 479px) {
+  body #introduction h1 {
+    top: 30%; } }
+
+@media (min-width: 480px) and (max-width: 599px) {
+  body #menu {
+    height: 10vh; } }
+@media only screen and (max-width: 479px) {
+  body #menu {
+    height: 10vh; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #menu ul li {
+    padding: 10px; } }
+@media only screen and (max-width: 479px) {
+  body #menu ul li {
+    padding: 10px; } }
+
+@media screen and (min-width: 992px) {
+  body #instruction #mobile-instruction {
+    display: none; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  body #instruction #mobile-instruction {
+    display: block; } }
+@media (min-width: 600px) and (max-width: 767px) {
+  body #instruction #mobile-instruction {
+    display: block; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #instruction #mobile-instruction {
+    display: block; } }
+@media only screen and (max-width: 479px) {
+  body #instruction #mobile-instruction {
+    display: block; } }
+
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Portfolio h1 .border, body #content #Skills h1 .border, body #content #About h1 .border, body #content #Contact h1 .border {
+    width: 65%; } }
+@media only screen and (max-width: 479px) {
+  body #content #Portfolio h1 .border, body #content #Skills h1 .border, body #content #About h1 .border, body #content #Contact h1 .border {
+    width: 75%; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Portfolio div div img {
+    max-width: 300px; } }
+@media only screen and (max-width: 479px) {
+  body #content #Portfolio div div img {
+    max-width: 300px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Portfolio div div .portfolio-item a {
+    font-size: 14px; } }
+@media only screen and (max-width: 479px) {
+  body #content #Portfolio div div .portfolio-item a {
+    font-size: 14px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Skills .skill-list {
+    padding: 10px 0px; } }
+@media only screen and (max-width: 479px) {
+  body #content #Skills .skill-list {
+    padding: 10px 0px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Skills .skill-list div {
+    margin: 5px 0px;
+    flex-direction: column; } }
+@media only screen and (max-width: 479px) {
+  body #content #Skills .skill-list div {
+    margin: 5px 0px;
+    flex-direction: column; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Skills .skill-list div h2 {
+    animation: shake 5s infinite linear; } }
+@media only screen and (max-width: 479px) {
+  body #content #Skills .skill-list div h2 {
+    animation: shake 5s infinite linear; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Skills .skill-list div ul li {
+    padding: 0px 3px;
+    font-size: 15px; } }
+@media only screen and (max-width: 479px) {
+  body #content #Skills .skill-list div ul li {
+    padding: 0px 3px;
+    font-size: 14px; } }
+@media (min-width: 600px) and (max-width: 767px) {
+  body #content #Skills .skill-p {
+    display: block; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Skills .skill-p {
+    display: block; } }
+@media only screen and (max-width: 479px) {
+  body #content #Skills .skill-p {
+    display: block; } }
+@media (min-width: 600px) and (max-width: 767px) {
+  body #content #Skills .skill-p p {
+    width: auto;
+    padding: 10px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Skills .skill-p p {
+    width: auto;
+    padding: 10px; } }
+@media only screen and (max-width: 479px) {
+  body #content #Skills .skill-p p {
+    width: auto;
+    padding: 10px; } }
+@media (min-width: 600px) and (max-width: 767px) {
+  body #content #About div {
+    display: block; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #About div {
+    display: block; } }
+@media only screen and (max-width: 479px) {
+  body #content #About div {
+    display: block; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #About div div {
+    display: block; } }
+@media only screen and (max-width: 479px) {
+  body #content #About div div {
+    display: block; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Contact a {
+    display: block; } }
+@media only screen and (max-width: 479px) {
+  body #content #Contact a {
+    display: block; } }
+@media only screen and (max-width: 479px) {
+  body #content #Contact form {
+    padding: 0px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Contact form div {
+    width: 100%; } }
+@media only screen and (max-width: 479px) {
+  body #content #Contact form div {
+    width: 100%; } }
+
+@media (min-width: 600px) and (max-width: 767px) {
+  body #footer-menu {
+    display: flex; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #footer-menu {
+    display: flex;
+    height: 10vh; } }
+@media only screen and (max-width: 479px) {
+  body #footer-menu {
+    display: flex;
+    height: 10vh; } }
+
+@media (min-width: 600px) and (max-width: 767px) {
+  body footer {
+    margin-top: 0px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body footer {
+    margin-top: 0px; } }
+@media only screen and (max-width: 479px) {
+  body footer {
+    margin-top: 0px; } }
+@media only screen and (max-width: 479px) {
+  body footer a {
+    font-size: 14px; } }
+
+@keyframes shake {
+  0%,100% {
+    transform: translateY(-1px); }
+  1%,99% {
+    transform: translateY(1px); } }
 @font-face {
   font-family: VCR;
   src: url("vcr.ttf"); }
@@ -35,11 +235,20 @@ html {
 body {
   align-content: center;
   background-color: #fff;
-  background-attachment: fixed;
   justify-items: center;
   height: 100%;
   width: 100%; }
 
+#overlay {
+  background-image: url("../../images/scanlines.png");
+  pointer-events: none;
+  animation: noise 1.5s infinite linear; }
+
+@keyframes noise {
+  0% {
+    background-position-y: 0; }
+  100% {
+    background-position-y: 2000px; } }
 #introduction {
   height: 100vh;
   width: 100%;
@@ -47,13 +256,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  z-index: 999;
   background-image: url("../../images/BG-master.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  z-index: -1; }
   #introduction h1, #introduction h4 {
     max-width: 380px;
     padding: 20px 0px;
@@ -65,19 +275,7 @@ body {
   #introduction h4 {
     top: 55%; }
 
-#instruction {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px; }
-  #instruction p {
-    display: inline-block;
-    padding: 20px;
-    width: 200px; }
-
 #container {
-  height: 520px;
-  width: 680px;
   position: relative;
   display: flex;
   align-items: center;
@@ -89,8 +287,10 @@ body {
   -moz-border-radius: 5px 15px 5px 15px;
   border-radius: 5px 15px 5px 15px; }
 
-a {
-  text-decoration: none; }
+img {
+  -webkit-border-radius: 5px 15px 5px 15px;
+  -moz-border-radius: 5px 15px 5px 15px;
+  border-radius: 5px 15px 5px 15px; }
 
 .active, .hover-active {
   display: block !important; }
@@ -99,6 +299,7 @@ a {
   display: flex !important; }
 
 footer {
+  margin-top: 50px;
   height: 5vh;
   min-height: 25px;
   display: flex;
@@ -111,9 +312,17 @@ footer {
   footer a {
     display: inline-flex; }
 
+a {
+  transition: transform 0.2s ease; }
+  a:hover {
+    transform: translateY(-2px); }
+
 @font-face {
   font-family: VCR;
   src: url("vcr.ttf"); }
+body {
+  color: #00001a; }
+
 #introduction {
   -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
   -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
@@ -123,8 +332,11 @@ footer {
   #introduction h4 {
     color: #fff; }
 
-#menu ul li a {
+#menu ul li a, #footer-menu ul li a {
   color: #fff; }
+  #menu ul li a:hover, #footer-menu ul li a:hover {
+    transform: translateY(-1px);
+    color: #d966ff; }
 
 #Portfolio, #Contact, #Skills, #About {
   display: none; }
@@ -134,48 +346,69 @@ footer {
     position: relative; }
     #Portfolio h1 div, #Contact h1 div, #Skills h1 div, #About h1 div {
       position: absolute;
-      border-bottom: 2px solid #ff9966;
+      border-bottom: 3px dashed #d966ff;
       bottom: 0;
       width: 35%; }
 
 footer a {
   color: #fff; }
+  footer a:hover {
+    transform: translateY(-1px);
+    color: #d966ff; }
 
 label {
   font-family: 'VCR', sans-serif; }
 
 input {
-  font-family: 'Quicksand', sans-serif; }
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #fff; }
+
+::placeholder {
+  color: #fff;
+  font-weight: 300; }
 
 textarea {
-  font-family: 'Quicksand', sans-serif; }
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  font-weight: 600; }
 
 button {
-  font-family: 'VCR', sans-serif; }
+  font-family: 'VCR', sans-serif;
+  color: #fff;
+  letter-spacing: 2px; }
 
 p {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600; }
+  font-family: 'Quicksand', sans-serif; }
+
+span {
+  font-family: 'VCR', sans-serif; }
 
 a {
   font-family: 'Quicksand', sans-serif;
   text-decoration: none;
   cursor: pointer;
+  font-weight: 600;
+  color: #d966ff; }
+  a:hover {
+    transform: translateY(-1px); }
+
+ul {
+  font-family: 'Quicksand', sans-serif;
   font-weight: 600; }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: 'VCR', sans-serif; }
-
-h2 {
-  font-family: 'VCR', sans-serif; }
-
-h4 {
-  font-family: 'VCR', sans-serif;
-  color: #fff; }
 
 @font-face {
   font-family: VCR;
   src: url("vcr.ttf"); }
+#overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999; }
+
 #player-canvas, #background-canvas {
   image-rendering: pixelated; }
 
@@ -188,32 +421,39 @@ canvas {
 #background-canvas {
   z-index: 4; }
 
-#instruction, #container, #content {
+#instruction, #content {
   max-width: 1200px;
+  padding: 10px 15px;
   margin: 0 auto; }
 
-#overlay {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  z-index: 999;
-  background-image: url("../../images/scanlines.png");
-  pointer-events: none; }
+#container {
+  max-width: 1200px;
+  margin: 0 auto 50px auto; }
+
+#instruction {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #instruction p {
+    z-index: 2;
+    display: inline-block;
+    padding: 10px;
+    width: 200px; }
 
 #Portfolio div {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  z-index: 2; }
   #Portfolio div div {
     display: inline-flex;
-    margin: 10px 20px; }
+    margin: 10px 0px;
+    max-width: 300px; }
     #Portfolio div div div {
       display: none; }
     #Portfolio div div .portfolio-item {
-      display: flex;
-      margin: 10px 0px;
-      max-width: 300px; }
+      display: inline-flex; }
       #Portfolio div div .portfolio-item h2 {
         padding: 20px 0px; }
       #Portfolio div div .portfolio-item a, #Portfolio div div .portfolio-item p {
@@ -221,20 +461,40 @@ canvas {
 
 #Contact a {
   display: inline;
-  padding: 10px 20px; }
+  padding: 10px 20px;
+  transition: transform 0.2s ease; }
+  #Contact a:hover {
+    transform: translateY(-2px); }
+#Contact form div {
+  z-index: 2; }
 
+#Skills .icon-list {
+  display: flex;
+  text-align: center;
+  justify-content: center; }
+  #Skills .icon-list ul {
+    z-index: 2; }
+    #Skills .icon-list ul li {
+      display: inline-flex;
+      padding: 0px 3px; }
 #Skills .skill-list {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 15px; }
   #Skills .skill-list div {
     display: inline-flex;
     margin: 10px 20px;
     flex-direction: row;
-    align-items: center; }
+    align-items: center;
+    z-index: 2; }
     #Skills .skill-list div h2 {
       display: inline-flex;
       padding: 0px 20px;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.2s ease; }
+      #Skills .skill-list div h2:hover {
+        transform: translateY(-2px);
+        color: #d966ff; }
     #Skills .skill-list div ul {
       list-style-type: none;
       display: none; }
@@ -244,8 +504,10 @@ canvas {
 #Skills .skill-p {
   display: flex;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+  padding: 15px; }
   #Skills .skill-p p {
+    z-index: 2;
     display: flex;
     width: 450px;
     padding: 0px 15px; }
@@ -254,7 +516,16 @@ canvas {
   display: flex; }
   #About div div {
     display: inline-flex;
-    flex-direction: column; }
+    flex-direction: column;
+    z-index: 2;
+    padding: 0px 15px; }
+    #About div div h3 {
+      padding: 0px 0px 15px 0px; }
+    #About div div h4 {
+      padding: 15px 10px;
+      text-align: center; }
+    #About div div p {
+      padding: 5px 0; }
 
 @font-face {
   font-family: VCR;
@@ -280,7 +551,10 @@ form {
       box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
       display: block;
       padding: 10px;
-      border-style: none; }
+      border-style: none;
+      -webkit-border-radius: 5px 15px 5px 15px;
+      -moz-border-radius: 5px 15px 5px 15px;
+      border-radius: 5px 15px 5px 15px; }
     form div textarea {
       background-color: #00001a;
       -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
@@ -289,12 +563,31 @@ form {
       display: block;
       padding: 10px;
       border-style: none;
-      height: inherit; }
+      height: inherit;
+      -webkit-border-radius: 5px 15px 5px 15px;
+      -moz-border-radius: 5px 15px 5px 15px;
+      border-radius: 5px 15px 5px 15px; }
   form button {
     display: inline-flex;
     height: 50px;
     width: 100px;
-    padding: 10px; }
+    padding: 10px;
+    margin: 10px;
+    border-style: none;
+    background-color: #00001a;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    -webkit-border-radius: 5px 15px 5px 15px;
+    -moz-border-radius: 5px 15px 5px 15px;
+    border-radius: 5px 15px 5px 15px; }
+    form button:hover {
+      transform: translateY(-2px);
+      background-color: #d966ff; }
+
+.hide {
+  display: none; }
+
+.sronly, #honeypot {
+  display: none; }
 
 @font-face {
   font-family: VCR;
@@ -317,25 +610,30 @@ form {
     #menu ul li {
       display: inline-block;
       padding: 10px 20px; }
+      #menu ul li a {
+        transition: transform 0.2s ease; }
+        #menu ul li a:hover {
+          transform: translateY(-2px); }
 
-.item-menu {
-  position: fixed;
+#footer-menu {
+  display: none;
+  height: 5vh;
   width: 100%;
-  height: 120px;
-  overflow: hidden; }
-  .item-menu .nav-desktop {
-    max-height: 120px;
-    text-align: center; }
-    .item-menu .nav-desktop ul {
-      list-style-type: none;
-      display: inline-flex; }
-      .item-menu .nav-desktop ul li {
-        width: 15vw;
-        min-width: 115px;
-        margin: 0 auto;
-        display: inline-block; }
-    .item-menu .nav-desktop img {
-      display: inline-flex;
-      max-height: 110px; }
+  align-items: center;
+  z-index: 900;
+  background-color: #00001a;
+  -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
+  box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4); }
+  #footer-menu ul {
+    margin: 0 auto;
+    list-style-type: none; }
+    #footer-menu ul li {
+      display: inline-block;
+      padding: 10px; }
+      #footer-menu ul li a {
+        transition: transform 0.2s ease; }
+        #footer-menu ul li a:hover {
+          transform: translateY(-2px); }
 
 /*# sourceMappingURL=main.css.map */
