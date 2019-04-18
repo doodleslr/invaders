@@ -1,23 +1,18 @@
 window.addEventListener('load', function(event){
 
     'use strict';
-
     //init functions
-    let planetArr;
+    let planetArr = null;
     const reqUrl = "js/planets.json";
-    
-    const requestJSON   =   function(){
+    const ctx = document.querySelector('#player-canvas').getContext('2d');
+
+    const requestJSON = function(){
         let request = new XMLHttpRequest();
         request.open("GET", reqUrl);
         request.responseType = "json";
+        request.onload = function(){ planetArr = request.response; engine.start(); };
         request.send();
-
-        request.onload = function(){ planetArr = request.response; };
-        return true;
-        
     }
-
-    const ctx = document.querySelector('#player-canvas').getContext('2d');
 
     var executed = false;
     const runOnceAndThen = function(){
@@ -59,7 +54,7 @@ window.addEventListener('load', function(event){
                         );
         ctx.rotate(game.world.player.angle);
         display.drawPlayer  (
-                                game.world.player.width /-2,
+                                game.world.player.width / -2,
                                 game.world.player.height / -2
                             );
         ctx.restore();
@@ -73,6 +68,8 @@ window.addEventListener('load', function(event){
         };
 
         runOnceAndThen();
+
+        display.drawParticle(game.world.player.particlePool);
 
         display.bg(game.world.background_color);
 
@@ -90,9 +87,7 @@ window.addEventListener('load', function(event){
     //where above modules interact
     const engine       = new Engine(1000/30, update);
     
-    
     window.addEventListener('keydown', keyDownUp);
     window.addEventListener('keyup', keyDownUp);
-
-    if(requestJSON()){ engine.start(); } else { alert(reqUrl + ' array not found'); };
+    requestJSON();
 });

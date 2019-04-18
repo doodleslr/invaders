@@ -2,25 +2,25 @@
     "planet": [
         {
             "name"  : "Contact",
-            "radius": 100,
+            "radius": 70,
             "x"     : 510,
             "y"     : 350
         },
         {
             "name"  : "About",
-            "radius": 100,
+            "radius": 70,
             "x"     : 60,
             "y"     : 70
         },
         {
             "name"  : "Skills",
-            "radius": 100,
+            "radius": 70,
             "x"     : 60,
             "y"     : 350
         },
         {
             "name"  : "Portfolio",
-            "radius": 100,
+            "radius": 70,
             "x"     : 510,
             "y"     : 80
         }

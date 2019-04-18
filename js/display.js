@@ -7,7 +7,7 @@ const Display = function(assetCanvas, plyrCanvas, height, width){
     const plyrContext   = plyrCanvas.getContext('2d');
 
     var plyrImg = new Image();
-    plyrImg.src = 'images/player.svg';
+    plyrImg.src = 'images/player.gif';
 
     this.drawPlayer = function(x, y){ plyrContext.drawImage(plyrImg, x, y) };
     
@@ -30,9 +30,16 @@ const Display = function(assetCanvas, plyrCanvas, height, width){
     };
 
     this.drawPlanet = function(){
-        for (var i = planetStore.length - 1; i > -1; --i) {
+        for(var i = planetStore.length - 1; i > -1; --i){
             assetContext.drawImage(planetStore[i].image, planetStore[i].x, planetStore[i].y);
         };
+    }
+
+    this.drawParticle = function(particleArr, x, y){
+        plyrContext.fillStyle = '#fff';
+        for(var i = particleArr.length - 1; i > -1; --i){
+            plyrContext.fillRect(particleArr[i].x, particleArr[i].y, particleArr[i].size, particleArr[i].size);
+        }
     }
 
     // must fill bg of playable canvas not bg canvas

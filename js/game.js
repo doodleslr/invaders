@@ -9,7 +9,7 @@ Game.prototype = { constructor : Game };
 Game.World = function(){
 
     // World properties
-    this.background_color   = 'rgba(0, 0, 0, 0.05)';
+    this.background_color   = 'rgba(0, 0, 0, 0.4)';
     this.height             = 480;
     this.width              = 640;
     this.friction           = 0.96;
@@ -28,33 +28,30 @@ Game.World = function(){
     var plyr                = this.player;
 
     this.update             = function(){
-        this.player.velocity_x *= this.friction;
-        this.player.velocity_y *= this.friction;
-
-        // can optimise player velocity drift-off decay much faster
-        // with 4 decimal places rather than infinite
-        // stop calculation and drifting along all the way down to imperceptibly small decimal places
-        this.player.x += Math.round(this.player.velocity_x * 4) / 4;
-        this.player.y += Math.round(this.player.velocity_y * 4) / 4;
+        this.player.velocity_x  *= this.friction;
+        this.player.velocity_y  *= this.friction;
+        this.player.x           += Math.round(this.player.velocity_x * 4) / 4;
+        this.player.y           += Math.round(this.player.velocity_y * 4) / 4;
 
         this.collideWorld(this.player);
 
         var p = this.planet.length - 1;
         var b = this.planet.length - 1;
+        var t = this.player.particlePool.length -1;
         
         for(p; p > -1; --p){
             var plnt = this.planet[p];
             item = document.querySelector('#' + plnt.name);
             if(this.vector.checkCol(plyr, plnt)) {
+                for(b; b > -1; --b){
+                    let obj = this.planet[b];
+                    all = document.querySelector('#' + obj.name);
+                    all.classList.remove('active');
+                }
                 if(item.classList.contains('hover-active')){
                     this.player.velocity_x *= 0.75;
                     this.player.velocity_y *= 0.75;
                 } else {
-                    for(b; b > -1; --b){
-                        let obj = this.planet[b];
-                        all = document.querySelector('#' + obj.name);
-                        all.classList.remove('active');
-                    }
                     this.player.velocity_x *= 0.75;
                     this.player.velocity_y *= 0.75;
                     item.classList.add('hover-active');
@@ -62,6 +59,21 @@ Game.World = function(){
             } else {
                 item.classList.remove('hover-active');
             }
+        }
+
+        for(t; t > -1; --t){
+            var particle    = this.player.particlePool[t];
+
+            particle.life   *= 0.9;
+            if(particle.life <= 1) {
+                this.player.particlePool.splice(t, 1);
+            }
+            
+            particle.speed  *= 0.87;
+            particle.angle  += (1 - Math.random() * 2) * (Math.PI / 18);
+            particle.x      -= Math.floor(Math.random() * particle.speed) * Math.sin(particle.angle);
+            particle.y      += Math.floor(Math.random() * particle.speed) * Math.cos(particle.angle);
+            particle.size   *= 0.95;
         }
     };
 };
@@ -82,20 +94,22 @@ Game.World.Player = function(x, y, a){
 
     // Player properties
     this.height     = 20;
-    this.width      = 10;
+    this.width      = 15;
     this.color      = '#ff0000';
     this.radius     = 8;
     
     // Player movement
-    this.speed      = 0.7;
+    this.speed      = 0.5;
     this.x          = x;
     this.y          = y;
     this.velocity_x = 0;
     this.velocity_y = 0;
 
     // Player rotation
-    this.moveAngle  = 10;
+    this.moveAngle  = 7;
     this.angle      = a;
+
+    this.particlePool = new Array();
 
     this.update     = function(controller){
                             if(controller.left.active)  {   this.rLeft();}
@@ -113,6 +127,7 @@ Game.World.Player = function(x, y, a){
                             this.y -= this.speed * Math.cos(this.angle);
                             this.velocity_x += this.speed * Math.sin(this.angle);
                             this.velocity_y -= this.speed * Math.cos(this.angle);
+                            this.genParticle(this.x + (this.width / 2), this.y + (this.height / 2));
                         };
 };
 
@@ -127,8 +142,19 @@ Game.World.Player.prototype = {
     setLeft:      function(x){  this.x       =   x;                },
     setRight:     function(x){  this.x       =   x - this.width;   },
     setTop:       function(y){  this.y       =   y;                },
-    setBottom:    function(y){  this.y       =   y - this.height;  }
+    setBottom:    function(y){  this.y       =   y - this.height;  },
+
+    genParticle:  function(x, y){  if(this.particlePool.length <= 50) { this.particlePool.push(new Game.World.Player.Particle(x, y, this.angle, Math.floor(Math.random() * 4) + 1))} } 
 };
+
+Game.World.Player.Particle = function(x, y, a, s){
+    this.x          = x;
+    this.y          = y;
+    this.angle      = a;
+    this.speed      = 30;
+    this.life       = 300;
+    this.size       = s;
+}
 
 // PLANETS -----------------------------------------------------------------------------------------------------------------
 Game.World.Planet = function(x, y, r, n){
