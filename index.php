@@ -74,7 +74,7 @@
         <div id="Contact">
             <h1>Contact Me<div class="border"></div></h1>
             <a href='#'>dglarocca@hotmail.com</a><a href='tel:+61402509254'>+61 402 509 254</a>
-            <form method="POST" action="https://script.google.com/macros/s/AKfycbyUt8_Gw_AZFg7mEzTmb10-Y898hQpya-8ob_-9Iht0gBsu-oJE/exec">
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbz4E0Mrf5npMH1NczFV93N8qry10pg8zvhWY7KfDrD4t87dmaQ/exec">
                 <div>
                     <label>Name:</label>
                     <input id="name" name="name" placeholder="Zapp Brannigan"/>
@@ -83,6 +83,8 @@
                     <span id="email-invalid" style="display: none;"></span>
                     <label>Subject:</label>
                     <input id="subject" name="subject" placeholder="The key to victory is the element of surprise. Surprise!"/>
+                    <label class="sronly"></label>
+                    <input id="honeypot" type="text" name="honeypot" value="" />
                 </div>
                 <div>
                     <label>Message:</label>
@@ -90,9 +92,8 @@
                 </div>
                 <button>Send</button>
             </form>
-            <div class="textFlairD" style="display:none;text-align: center;" id="thankyou_message">
-                <h1 class="textTitle" style="font-size: 24px;color: #f26522;"><i>Your request has been submitted.</i></h1>
-                <h3>We appreciate you for contacting us, we will get back to you as soon as possible.</h2>
+            <div class="hide">
+                <h3><i>Your message has been submitted. Thank you.</i></h1>
             </div>
         </div>
         <div id="Skills">
@@ -186,16 +187,12 @@
 </footer>
 
 
-<script type = "text/javascript" src="js/main.js">
-    </script>
-    <script type = "text/javascript" src="js/engine.js">
-    </script>
-    <script type = "text/javascript" src="js/display.js">
-    </script>
-    <script type = "text/javascript" src="js/controller.js">
-    </script>
-    <script type = "text/javascript" src="js/game.js">
-</script>
+<script type = "text/javascript" src="js/main.js"></script>
+<script type = "text/javascript" src="js/engine.js"></script>
+<script type = "text/javascript" src="js/display.js"></script>
+<script type = "text/javascript" src="js/controller.js"></script>
+<script type = "text/javascript" src="js/game.js"></script>
+<script type = "text/javascript" src="js/form.js"></script>
 
 <script type = "text/javascript">
 
