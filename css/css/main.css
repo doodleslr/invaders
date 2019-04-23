@@ -530,6 +530,9 @@ canvas {
 @font-face {
   font-family: VCR;
   src: url("vcr.ttf"); }
+.thankyou {
+  padding: 20px 0px; }
+
 form {
   display: flex;
   padding: 10px 20px;
