@@ -27,7 +27,7 @@
     <div id="instruction">
         <p>Use your keyboard arrow keys to navigate the planets.</p>
         <p>Otherwise the menu above can help you.</p>
-        <p id="mobile-instruction"> Unfortunately this does not work on mobile or tablet right now, but touch screen support will be added <span>in the future!</span></p>
+        <p id="mobile-instruction"> Unfortunately this game does not work on mobile or tablet right now, but touch screen support will be added <span>in the future!</span></p>
     </div>
     <div id='container'>
         <canvas id='background-canvas'></canvas>
@@ -38,30 +38,36 @@
             <h1>Portfolio<div class="border"></div></h1>
             <div>
                 <div>
-                    <img onmouseover="showPortInfo(this)" src='images/rocc.jpg'/>
+                    <a target="_blank" href="https://roccplumbing.com.au/">
+                        <img onmouseover="showPortInfo(this)" src='images/rocc.jpg'/>
+                    </a>
                     <div>
                         <h2>Rocc Plumbing</h2>
-                        <a href='#'>https://github.com/doodleslr/roccplumbing</a>
+                        <a target="_blank" href='https://github.com/doodleslr/roccplumbing'>https://github.com/doodleslr/roccplumbing</a>
                         <!-- list of language used icons -->
                         <p>Active business website for Rocc Plumbing, a successful Sydney-based plumbing company.<br>
                         Developed in HTML5 and utilising SASS, CSS animations, jQuery, PHP for templating and Bootstrap for a reliable UI.</p>
                     </div>
                 </div>
                 <div>
-                    <img onmouseover="showPortInfo(this)" src='images/cutncomb.jpg'/>
+                    <a target="_blank" href="http://www.cutandcomb.com.au/">
+                        <img onmouseover="showPortInfo(this)" src='images/cutncomb.jpg'/>
+                    </a>
                     <div>
                         <h2>Cut and Comb</h2>
-                        <a href='#'>https://github.com/doodleslr/cutandcomb</a>
+                        <a target="_blank" href='https://github.com/doodleslr/cutandcomb'>https://github.com/doodleslr/cutandcomb</a>
                         <!-- list of language used icons -->
                         <p>Active business website for Cut and Comb, another successful Sydney-based Hairdressing Salon.<br>
                         Developed in HTML5 and utilising SASS, jQuery, PHP and Bootstrap for a reliable UI.</p>
                     </div>
                 </div>
                 <div>
-                    <img onmouseover="showPortInfo(this)" src='images/forum.jpg'/>
+                    <a target="_blank" href="https://www.dglarocca.com/forum/login.php">
+                        <img onmouseover="showPortInfo(this)" src='images/forum.jpg'/>
+                    </a>
                     <div>
                         <h2>CRUD Forum</h2>
-                        <a href='#'>https://github.com/doodleslr/dglarocca-forum</a>
+                        <a target="_blank" href='https://github.com/doodleslr/dglarocca-forum'>https://github.com/doodleslr/dglarocca-forum</a>
                         <!-- list of language used icons -->
                         <p>A responsive forum with Reddit inspired voting system, also including image media upload.<br>
                         Developed mainly in PHP and utilising SASS, HTML5, SQLite for user and post sotrage, and Bootstrap for a quick and reliable UI.</p>
@@ -92,7 +98,7 @@
                 </div>
                 <button>Send</button>
             </form>
-            <div class="hide">
+            <div class="thankyou hide">
                 <h3><i>Your message has been submitted. Thank you.</i></h1>
             </div>
         </div>
@@ -216,7 +222,7 @@ itemArr = ['#Portfolio', '#Skills', '#About', '#Contact'];
     }
 
     const showPortInfo = function(e){
-        let target = e.nextElementSibling;
+        let target = e.parentNode.nextElementSibling;
         target.classList.add('portfolio-item');
     }
 </script>
