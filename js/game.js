@@ -69,7 +69,7 @@ Game.World = function(){
                 this.player.particlePool.splice(t, 1);
             }
             
-            particle.speed  *= 0.87;
+            particle.speed  *= 0.78;
             particle.angle  += (1 - Math.random() * 2) * (Math.PI / 18);
             particle.x      -= Math.floor(Math.random() * particle.speed) * Math.sin(particle.angle);
             particle.y      += Math.floor(Math.random() * particle.speed) * Math.cos(particle.angle);
@@ -144,15 +144,15 @@ Game.World.Player.prototype = {
     setTop:       function(y){  this.y       =   y;                },
     setBottom:    function(y){  this.y       =   y - this.height;  },
 
-    genParticle:  function(x, y){  if(this.particlePool.length <= 50) { this.particlePool.push(new Game.World.Player.Particle(x, y, this.angle, Math.floor(Math.random() * 4) + 1))} } 
+    genParticle:  function(x, y){  if(this.particlePool.length <= 50) { this.particlePool.push(new Game.World.Player.Particle(x, y, this.angle, Math.floor(Math.random() * 3) + 1))} } 
 };
 
 Game.World.Player.Particle = function(x, y, a, s){
     this.x          = x;
     this.y          = y;
     this.angle      = a;
-    this.speed      = 30;
-    this.life       = 300;
+    this.speed      = 35;
+    this.life       = 150;
     this.size       = s;
 }
 

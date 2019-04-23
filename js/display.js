@@ -35,10 +35,14 @@ const Display = function(assetCanvas, plyrCanvas, height, width){
         };
     }
 
-    this.drawParticle = function(particleArr, x, y){
+    this.drawParticle = function(particleArr){
         plyrContext.fillStyle = '#fff';
         for(var i = particleArr.length - 1; i > -1; --i){
-            plyrContext.fillRect(particleArr[i].x, particleArr[i].y, particleArr[i].size, particleArr[i].size);
+            plyrContext.beginPath();
+            plyrContext.strokeStyle = '#fff';
+            plyrContext.arc(particleArr[i].x, particleArr[i].y, particleArr[i].size, 0, Math.PI * 2);
+            if(Math.random() > 0.4){ plyrContext.stroke(); }
+            plyrContext.closePath();
         }
     }
 

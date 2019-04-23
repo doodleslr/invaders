@@ -81,6 +81,7 @@
             form.reset();
             var thanks = document.querySelector(".hide");
             thanks.classList.remove('hide');
+            form.classList.add('hide');
             return;
         };
         // url encode form data for sending as post data
