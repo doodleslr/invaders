@@ -38,37 +38,64 @@
             <h1>Portfolio<div class="border"></div></h1>
             <div>
                 <div>
-                    <a target="_blank" href="https://roccplumbing.com.au/">
-                        <img onmouseover="showPortInfo(this)" src='images/rocc.jpg'/>
-                    </a>
+                    <img onmouseover="showPortInfo(this)" src='images/rocc.jpg'/>
                     <div>
-                        <h2>Rocc Plumbing</h2>
+                        <a target="_blank" href="https://roccplumbing.com.au/">
+                            <h2>Rocc Plumbing</h2>
+                        </a>
                         <a target="_blank" href='https://github.com/doodleslr/roccplumbing'>https://github.com/doodleslr/roccplumbing</a>
-                        <!-- list of language used icons -->
+                        <ul>
+                            <li><img src='images/icons/1.gif'/></li>
+                            <li><img src='images/icons/2.gif'/></li>
+                            <li><img src='images/icons/3.gif'/></li>
+                            <li><img src='images/icons/4.gif'/></li>
+                            <li><img src='images/icons/6.gif'/></li>
+                            <li><img src='images/icons/7.gif'/></li>
+                            <li><img src='images/icons/8.gif'/></li>
+                            <li><img src='images/icons/11.gif'/></li>
+                        </ul>
                         <p>Active business website for Rocc Plumbing, a successful Sydney-based plumbing company.<br>
                         Developed in HTML5 and utilising SASS, CSS animations, jQuery, PHP for templating and Bootstrap for a reliable UI.</p>
                     </div>
                 </div>
                 <div>
-                    <a target="_blank" href="http://www.cutandcomb.com.au/">
-                        <img onmouseover="showPortInfo(this)" src='images/cutncomb.jpg'/>
-                    </a>
+                    <img onmouseover="showPortInfo(this)" src='images/cutncomb.jpg'/>
                     <div>
-                        <h2>Cut and Comb</h2>
+                        <a target="_blank" href="http://www.cutandcomb.com.au/">
+                            <h2>Cut and Comb</h2>
+                        </a>
                         <a target="_blank" href='https://github.com/doodleslr/cutandcomb'>https://github.com/doodleslr/cutandcomb</a>
-                        <!-- list of language used icons -->
+                        <ul>
+                            <li><img src='images/icons/1.gif'/></li>
+                            <li><img src='images/icons/2.gif'/></li>
+                            <li><img src='images/icons/3.gif'/></li>
+                            <li><img src='images/icons/4.gif'/></li>
+                            <li><img src='images/icons/6.gif'/></li>
+                            <li><img src='images/icons/8.gif'/></li>
+                            <li><img src='images/icons/11.gif'/></li>
+                        </ul>
                         <p>Active business website for Cut and Comb, another successful Sydney-based Hairdressing Salon.<br>
                         Developed in HTML5 and utilising SASS, jQuery, PHP and Bootstrap for a reliable UI.</p>
                     </div>
                 </div>
                 <div>
-                    <a target="_blank" href="https://www.dglarocca.com/forum/login.php">
-                        <img onmouseover="showPortInfo(this)" src='images/forum.jpg'/>
-                    </a>
+                    <img onmouseover="showPortInfo(this)" src='images/forum.jpg'/>
                     <div>
-                        <h2>CRUD Forum</h2>
+                        <a target="_blank" href="https://www.dglarocca.com/forum/login.php">
+                            <h2>PHP Forum</h2>
+                        </a>
                         <a target="_blank" href='https://github.com/doodleslr/dglarocca-forum'>https://github.com/doodleslr/dglarocca-forum</a>
-                        <!-- list of language used icons -->
+                        <ul>
+                            <li><img src='images/icons/1.gif'/></li>
+                            <li><img src='images/icons/2.gif'/></li>
+                            <li><img src='images/icons/3.gif'/></li>
+                            <li><img src='images/icons/4.gif'/></li>
+                            <li><img src='images/icons/6.gif'/></li>
+                            <li><img src='images/icons/7.gif'/></li>
+                            <li><img src='images/icons/9.gif'/></li>
+                            <li><img src='images/icons/11.gif'/></li>
+                            <li><img src='images/icons/12.gif'/></li>
+                        </ul>
                         <p>A responsive forum with Reddit inspired voting system, also including image media upload.<br>
                         Developed mainly in PHP and utilising SASS, HTML5, SQLite for user and post sotrage, and Bootstrap for a quick and reliable UI.</p>
                     </div>
@@ -222,7 +249,7 @@ itemArr = ['#Portfolio', '#Skills', '#About', '#Contact'];
     }
 
     const showPortInfo = function(e){
-        let target = e.parentNode.nextElementSibling;
+        let target = e.nextElementSibling;
         target.classList.add('portfolio-item');
     }
 </script>
