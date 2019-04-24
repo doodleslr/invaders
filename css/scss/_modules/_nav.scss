@@ -8,6 +8,9 @@
     top: 0;
     align-items: center;
     z-index: 900;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
     background-color: $darkblu;
     @include boxShadow;
     ul {
@@ -32,6 +35,9 @@
     width: 100%;
     align-items: center;
     z-index: 900;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
     background-color: $darkblu;
     @include boxShadow;
     ul {
@@ -49,31 +55,3 @@
         }
     }
 }
-
-// .item-menu {
-//     position: fixed;
-//     width: 100%;
-//     height: 120px;
-//     overflow: hidden;
-// 	.nav-desktop {
-//         max-height: 120px;
-//         text-align: center;
-//         ul {
-//             list-style-type: none;
-//             display: inline-flex;
-//             li {
-//                 width: 15vw;
-//                 min-width: 115px;
-//                 margin: 0 auto;
-//                 display: inline-block;
-//                 a {
-
-//                 }
-//             }
-//         }
-//         img {
-//             display: inline-flex;
-//             max-height: 110px;
-//         }
-// 	}   
-// }

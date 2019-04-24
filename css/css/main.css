@@ -71,7 +71,13 @@
     padding: 10px; } }
 @media only screen and (max-width: 479px) {
   body #menu ul li {
-    padding: 10px; } }
+    padding: 5px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #menu ul li a {
+    font-size: 12px; } }
+@media only screen and (max-width: 479px) {
+  body #menu ul li a {
+    font-size: 12px; } }
 
 @media screen and (min-width: 992px) {
   body #instruction #mobile-instruction {
@@ -103,10 +109,18 @@
     max-width: 300px; } }
 @media (min-width: 480px) and (max-width: 599px) {
   body #content #Portfolio div div .portfolio-item a {
-    font-size: 14px; } }
+    font-size: 12px; } }
 @media only screen and (max-width: 479px) {
   body #content #Portfolio div div .portfolio-item a {
-    font-size: 14px; } }
+    font-size: 12px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Portfolio div div .portfolio-item ul li img {
+    max-width: 20px;
+    max-height: 20px; } }
+@media only screen and (max-width: 479px) {
+  body #content #Portfolio div div .portfolio-item ul li img {
+    max-width: 20px;
+    max-height: 20px; } }
 @media (min-width: 480px) and (max-width: 599px) {
   body #content #Skills .skill-list {
     padding: 10px 0px; } }
@@ -198,6 +212,18 @@
   body #footer-menu {
     display: flex;
     height: 10vh; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #footer-menu ul li {
+    padding: 10px; } }
+@media only screen and (max-width: 479px) {
+  body #footer-menu ul li {
+    padding: 5px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #footer-menu ul li a {
+    font-size: 12px; } }
+@media only screen and (max-width: 479px) {
+  body #footer-menu ul li a {
+    font-size: 12px; } }
 
 @media (min-width: 600px) and (max-width: 767px) {
   body footer {
@@ -328,9 +354,11 @@ body {
   -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
   box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4); }
   #introduction h1 {
-    color: #fff; }
+    color: #fff;
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.8); }
   #introduction h4 {
-    color: #fff; }
+    color: #fff;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.4); }
 
 #menu ul li a, #footer-menu ul li a {
   color: #fff; }
@@ -458,6 +486,14 @@ canvas {
         padding: 20px 0px; }
       #Portfolio div div .portfolio-item a, #Portfolio div div .portfolio-item p {
         padding: 10px 0px; }
+      #Portfolio div div .portfolio-item ul {
+        list-style-type: none;
+        display: flex;
+        text-align: center;
+        justify-content: center; }
+        #Portfolio div div .portfolio-item ul li {
+          display: inline-flex;
+          padding: 0px 3px; }
 
 #Contact a {
   display: inline;
@@ -603,6 +639,9 @@ form {
   top: 0;
   align-items: center;
   z-index: 900;
+  border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  -moz-border-radius: 0px 0px 10px 10px;
   background-color: #00001a;
   -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
   -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
@@ -624,6 +663,9 @@ form {
   width: 100%;
   align-items: center;
   z-index: 900;
+  border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
   background-color: #00001a;
   -moz-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);
   -webkit-box-shadow: inset 0px 0px 20px 0px rgba(230, 230, 230, 0.4);

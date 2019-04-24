@@ -79,7 +79,15 @@ body #menu {
                 padding: 10px
             }
             @include XS {
-                padding: 10px;
+                padding: 5px;
+            }
+            a {
+                @include SM {
+                    font-size: 12px;
+                }
+                @include XS {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -130,10 +138,24 @@ body #content {
                 .portfolio-item {
                     a {
                         @include SM {
-                            font-size: 14px;
+                            font-size: 12px;
                         }
                         @include XS {
-                            font-size: 14px;
+                            font-size: 12px;
+                        }
+                    }
+                    ul {
+                        li {
+                            img {
+                                @include SM {
+                                    max-width: 20px;
+                                    max-height: 20px;
+                                }
+                                @include XS {
+                                    max-width: 20px;
+                                    max-height: 20px;
+                                }
+                            }
                         }
                     }
                 }
@@ -261,6 +283,24 @@ body #footer-menu {
     @include XS {
         display: flex;
         height: 10vh;
+    }
+    ul {
+        li {
+            @include SM {
+                padding: 10px
+            }
+            @include XS {
+                padding: 5px;
+            }
+            a {
+                @include SM {
+                    font-size: 12px;
+                }
+                @include XS {
+                    font-size: 12px;
+                }
+            }
+        }
     }
 }
 body footer {
