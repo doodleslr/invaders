@@ -35,11 +35,14 @@ const Display = function(assetCanvas, plyrCanvas, height, width){
         };
     }
 
+    this.randomRGB = function(){
+        return 'rgb(' + Math.round(Math.random() * (255 - 125) + 125) + ',' + Math.round(Math.random() * (255 - 125) + 125) + ',' + Math.round(Math.random() * (255 - 125) + 125) + ')';
+    }
+
     this.drawParticle = function(particleArr){
-        plyrContext.fillStyle = '#fff';
         for(var i = particleArr.length - 1; i > -1; --i){
             plyrContext.beginPath();
-            plyrContext.strokeStyle = '#fff';
+            plyrContext.strokeStyle = this.randomRGB();
             plyrContext.arc(particleArr[i].x, particleArr[i].y, particleArr[i].size, 0, Math.PI * 2);
             if(Math.random() > 0.4){ plyrContext.stroke(); }
             plyrContext.closePath();

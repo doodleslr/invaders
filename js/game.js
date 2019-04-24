@@ -9,7 +9,7 @@ Game.prototype = { constructor : Game };
 Game.World = function(){
 
     // World properties
-    this.background_color   = 'rgba(0, 0, 0, 0.4)';
+    this.background_color   = 'rgba(0, 0, 10, 0.3)';
     this.height             = 480;
     this.width              = 640;
     this.friction           = 0.96;
@@ -93,10 +93,10 @@ Game.World.prototype = {
 Game.World.Player = function(x, y, a){
 
     // Player properties
-    this.height     = 20;
-    this.width      = 15;
+    this.height     = 30;
+    this.width      = 30;
     this.color      = '#ff0000';
-    this.radius     = 8;
+    this.radius     = 7;
     
     // Player movement
     this.speed      = 0.5;
