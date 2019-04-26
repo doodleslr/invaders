@@ -25,8 +25,8 @@
         </ul>
     </nav>
     <div id="instruction">
-        <p>Use your keyboard arrow keys to navigate the planets.</p>
-        <p>Otherwise the menu above can help you.</p>
+        <p>You can use the ←↑→ keyboard arrow keys to navigate the planets and pages.</p>
+        <p>Otherwise the menu above can help you navigate the site.</p>
         <p id="mobile-instruction"> Unfortunately this game does not work on mobile or tablet right now, but touch screen support will be added <span>in the future!</span></p>
     </div>
     <div id='container'>
