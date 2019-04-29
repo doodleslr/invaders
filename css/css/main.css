@@ -318,9 +318,6 @@ img {
   -moz-border-radius: 5px 15px 5px 15px;
   border-radius: 5px 15px 5px 15px; }
 
-.active, .hover-active {
-  display: block !important; }
-
 .active-skill {
   display: flex !important; }
 
@@ -367,7 +364,7 @@ body {
     color: #d966ff; }
 
 #Portfolio, #Contact, #Skills, #About {
-  display: none; }
+  padding: 50px 0px; }
   #Portfolio h1, #Contact h1, #Skills h1, #About h1 {
     padding-bottom: 5px;
     margin-bottom: 15px;

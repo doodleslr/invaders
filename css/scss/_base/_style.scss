@@ -76,10 +76,6 @@ body {
 img {
     @include borderRadius;
 }
-
-.active, .hover-active{
-    display: block !important;
-}
 .active-skill {
     display: flex !important;
 }
