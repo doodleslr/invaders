@@ -18,16 +18,17 @@
     </div>
     <nav id="menu">
         <ul>
-            <li><a onclick="showItem(this)" href="#Portfolio">Portfolio</a></li>
-            <li><a onclick="showItem(this)" href="#Skills">Skills</a></li>
-            <li><a onclick="showItem(this)" href="#About">About Me</a></li>
-            <li><a onclick="showItem(this)" href="#Contact">Contact</a></li>
+            <li><a href="#Portfolio">Portfolio</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#About">About Me</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
     <div id="instruction">
         <p>You can use the ←↑→ keyboard arrow keys to navigate the planets and pages.</p>
         <p>Otherwise the menu above can help you navigate the site.</p>
         <p id="mobile-instruction"> Unfortunately this game does not work on mobile or tablet right now, but touch screen support will be added <span>in the future!</span></p>
+        <div>    <p>Feel free to view the source code for this game <a href='https://github.com/doodleslr/invaders' target="_blank">here!</a></p></div>
     </div>
     <div id='container'>
         <canvas id='background-canvas'></canvas>
@@ -104,31 +105,6 @@
                 <!-- also wiki project, and maybe weather if i fix it -->
             </div>
         </div>
-        <div id="Contact">
-            <h1>Contact Me<div class="border"></div></h1>
-            <a href='#'>dglarocca@hotmail.com</a><a href='tel:+61402509254'>+61 402 509 254</a>
-            <form method="POST" action="https://script.google.com/macros/s/AKfycbz4E0Mrf5npMH1NczFV93N8qry10pg8zvhWY7KfDrD4t87dmaQ/exec">
-                <div>
-                    <label>Name:</label>
-                    <input id="name" name="name" placeholder="Zapp Brannigan"/>
-                    <label>Email</label>
-                    <input id="email" name="email" type="email" value="" required placeholder="zappb@doop.com"/>
-                    <span id="email-invalid" style="display: none;"></span>
-                    <label>Subject:</label>
-                    <input id="subject" name="subject" placeholder="The key to victory is the element of surprise. Surprise!"/>
-                    <label class="sronly"></label>
-                    <input id="honeypot" type="text" name="honeypot" value="" />
-                </div>
-                <div>
-                    <label>Message:</label>
-                    <textarea id="message" name="message" placeholder="In the game of chess, you can never let your adversary see your pieces."></textarea>
-                </div>
-                <button>Send</button>
-            </form>
-            <div class="thankyou hide">
-                <h3><i>Your message has been submitted. Thank you.</i></h1>
-            </div>
-        </div>
         <div id="Skills">
             <h1>Skills<div class="border"></div></h1>
             <div class="icon-list">
@@ -203,6 +179,31 @@
                 </div>
             </div>
         </div>
+        <div id="Contact">
+            <h1>Contact Me<div class="border"></div></h1>
+            <a href='#'>dglarocca@hotmail.com</a><a href='tel:+61402509254'>+61 402 509 254</a>
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbz4E0Mrf5npMH1NczFV93N8qry10pg8zvhWY7KfDrD4t87dmaQ/exec">
+                <div>
+                    <label>Name:</label>
+                    <input id="name" name="name" placeholder="Zapp Brannigan"/>
+                    <label>Email</label>
+                    <input id="email" name="email" type="email" value="" required placeholder="zappb@doop.com"/>
+                    <span id="email-invalid" style="display: none;"></span>
+                    <label>Subject:</label>
+                    <input id="subject" name="subject" placeholder="The key to victory is the element of surprise. Surprise!"/>
+                    <label class="sronly"></label>
+                    <input id="honeypot" type="text" name="honeypot" value="" />
+                </div>
+                <div>
+                    <label>Message:</label>
+                    <textarea id="message" name="message" placeholder="In the game of chess, you can never let your adversary see your pieces."></textarea>
+                </div>
+                <button>Send</button>
+            </form>
+            <div class="thankyou hide">
+                <h3><i>Your message has been submitted. Thank you.</i></h1>
+            </div>
+        </div>
     </div>
 
     <nav id="footer-menu">
@@ -229,28 +230,25 @@
 
 <script type = "text/javascript">
 
-itemArr = ['#Portfolio', '#Skills', '#About', '#Contact'];
-    const showItem = function(e){
-        let p = itemArr.length - 1;
-        for(p; p > -1; --p){
-            var pg = itemArr[p];
-            item = document.querySelector(pg);
-            item.classList.remove('active');
-        }
-        hrf = e.getAttribute('href');
-        item = document.querySelector(hrf);
-        item.classList.add('active');
-    }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-    const showSkill = function(e){
-        let target = e.childNodes[3];
-        console.log(target);
-        target.classList.toggle('active-skill');
-    }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-    const showPortInfo = function(e){
-        let target = e.nextElementSibling;
-        target.classList.add('portfolio-item');
-    }
+const showSkill = function(e){
+    let target = e.childNodes[3];
+    console.log(target);
+    target.classList.toggle('active-skill');
+}
+
+const showPortInfo = function(e){
+    let target = e.nextElementSibling;
+    target.classList.add('portfolio-item');
+}
 </script>
 </html>
