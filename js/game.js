@@ -36,18 +36,12 @@ Game.World = function(){
         this.collideWorld(this.player);
 
         var p = this.planet.length - 1;
-        var b = this.planet.length - 1;
         var t = this.player.particlePool.length -1;
         
         for(p; p > -1; --p){
             var plnt = this.planet[p];
             item = document.querySelector('#' + plnt.name);
             if(this.vector.checkCol(plyr, plnt)) {
-                for(b; b > -1; --b){
-                    let obj = this.planet[b];
-                    all = document.querySelector('#' + obj.name);
-                    all.classList.remove('active');
-                }
                 if(item.classList.contains('hover-active')){
                     this.player.velocity_x *= 0.75;
                     this.player.velocity_y *= 0.75;
@@ -55,6 +49,7 @@ Game.World = function(){
                     this.player.velocity_x *= 0.75;
                     this.player.velocity_y *= 0.75;
                     item.classList.add('hover-active');
+                    item.scrollIntoView({ behavior: 'smooth' });
                 }
             } else {
                 item.classList.remove('hover-active');
