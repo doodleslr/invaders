@@ -101,6 +101,18 @@
                         Developed mainly in PHP and utilising SASS, HTML5, SQLite for user and post sotrage, and Bootstrap for a quick and reliable UI.</p>
                     </div>
                 </div>
+                <div>
+                    <img onmouseover="showPortInfo(this)" src='images/accounting.jpg'/>
+                    <div>
+                        <h2>Accounting Site Design</h2>
+                    
+                        <ul>
+                            <li><img src='images/icons/14.gif'/></li>
+                            <li><img src='images/icons/15.gif'/></li>
+                        </ul>
+                        <p>Rapid design mockup for an accounting business client.<br>Made in Illustrator for layout and Photoshop for editing image assets in design.</p>
+                    </div>
+                </div>
                 <!-- can include nodejs projects once i figure out how to launch them online -->
                 <!-- also wiki project, and maybe weather if i fix it -->
             </div>
