@@ -13,7 +13,7 @@
         <div id="overlay">
         </div>
     <div id="introduction">
-            <h1>Hi, I'm Daniel :)</h1>
+            <h1>Hi, I'm Daniel.</h1>
             <h4>I am a Sydney based Web Developer with a love for strong, bold colours, challenging problem solving, and engaging interactive experiences.</h4>
     </div>
     <nav id="menu">
@@ -25,10 +25,10 @@
         </ul>
     </nav>
     <div id="instruction">
-        <p>You can use the ←↑→ keyboard arrow keys to navigate the planets and pages.</p>
-        <p>Otherwise the menu above can help you navigate the site.</p>
+        <p class="mobile-hide">You can use the ←↑→ keyboard arrow keys to navigate the planets and pages.</p>
+        <p class="mobile-hide">Otherwise the menu above can help you navigate the site.</p>
         <p id="mobile-instruction"> Unfortunately this game does not work on mobile or tablet right now, but touch screen support will be added <span>in the future!</span></p>
-        <div>    <p>Feel free to view the source code for this game <a href='https://github.com/doodleslr/invaders' target="_blank">here!</a></p></div>
+        <p>Feel free to view the source code for this game <a href='https://github.com/doodleslr/invaders' target="_blank">here!</a></p>
     </div>
     <div id='container'>
         <canvas id='background-canvas'></canvas>
@@ -38,13 +38,11 @@
         <div id="Portfolio">
             <h1>Portfolio<div class="border"></div></h1>
             <div>
-                <div>
+                <div ontouchstart="showMobileInfo(this)">
                     <img onmouseover="showPortInfo(this)" src='images/rocc.jpg'/>
                     <div>
-                        <a target="_blank" href="https://roccplumbing.com.au/">
-                            <h2>Rocc Plumbing</h2>
-                        </a>
-                        <a target="_blank" href='https://github.com/doodleslr/roccplumbing'>https://github.com/doodleslr/roccplumbing</a>
+                        <a class="inactive" target="_blank" href="https://roccplumbing.com.au/"><h2>Rocc Plumbing</h2></a>
+                        <a class="inactive" target="_blank" href='https://github.com/doodleslr/roccplumbing'>https://github.com/doodleslr/roccplumbing</a>
                         <ul>
                             <li><img src='images/icons/1.gif'/></li>
                             <li><img src='images/icons/2.gif'/></li>
@@ -55,17 +53,20 @@
                             <li><img src='images/icons/8.gif'/></li>
                             <li><img src='images/icons/11.gif'/></li>
                         </ul>
-                        <p>Active business website for Rocc Plumbing, a successful Sydney-based plumbing company.<br>
-                        Developed in HTML5 and utilising SASS, CSS animations, jQuery, PHP for templating and Bootstrap for a reliable UI.</p>
+                        <div>
+                            <p><span>My Role</span><br>Tasked with creating a business website for Rocc Plumbing, a successful Sydney-based plumbing company.<br>
+                            I developed this in HTML5 and utilised SASS, CSS animations, Javascript, PHP for modular templating and Bootstrap for a reliable UI.</p>
+                            <p><span>Project Difficulties</span><br>The major difficulty was getting accustomed to using what I learned outside of a tutorial as this was my first real project.<br>
+                            I included multiple unnecessary frameworks, like a jQuery library being used instead of simply using CSS text justify.</p>
+                            <p><span>My Solutions</span><br>I removed all jQuery dependancies and replaced them with faster and more efficient CSS and Javascript. I revised and minified all my "error filled, rookie, !important heavy CSS" with SASS and implemented a regex spam filter for the contact form.</p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <img onmouseover="showPortInfo(this)" src='images/cutncomb.jpg'/>
+                <div ontouchstart="showMobileInfo(this)">
+                    <img class="portImg" onmouseover="showPortInfo(this)" src='images/cutncomb.jpg'/>
                     <div>
-                        <a target="_blank" href="http://www.cutandcomb.com.au/">
-                            <h2>Cut and Comb</h2>
-                        </a>
-                        <a target="_blank" href='https://github.com/doodleslr/cutandcomb'>https://github.com/doodleslr/cutandcomb</a>
+                        <a class="inactive" target="_blank" href="http://www.cutandcomb.com.au/"><h2>Cut and Comb</h2></a>
+                        <a class="inactive" target="_blank" href='https://github.com/doodleslr/cutandcomb'>https://github.com/doodleslr/cutandcomb</a>
                         <ul>
                             <li><img src='images/icons/1.gif'/></li>
                             <li><img src='images/icons/2.gif'/></li>
@@ -75,17 +76,20 @@
                             <li><img src='images/icons/8.gif'/></li>
                             <li><img src='images/icons/11.gif'/></li>
                         </ul>
-                        <p>Active business website for Cut and Comb, another successful Sydney-based Hairdressing Salon.<br>
-                        Developed in HTML5 and utilising SASS, jQuery, PHP and Bootstrap for a reliable UI.</p>
+                        <div>
+                            <p><span>My Role</span><br>Tasked with creating a business website for Cut and Comb, another successful Sydney-based hairdressing salon.<br>
+                            I developed this in HTML5 and utilised SASS, Javascript, PHP for modular templating and Bootstrap for easy page layouts.</p>
+                            <p><span>Project Difficulties</span><br>My major challenge in this project was making this site responsive, while still presenting a clean design.<br>
+                            Many layouts were unique, making it difficult to create modular pieces to reuse across the site. The Services page was especially a challenge at the time because of the amount of information to present.</p>
+                            <p><span>My Solutions</span><br>I relied upon Bootstrap to help significantly with the layout as it provided me with the means to create the clean design I was after, while allowing me to easily adjust the layouts for each of my CSS breakpoints.</p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <img onmouseover="showPortInfo(this)" src='images/forum.jpg'/>
+                <div ontouchstart="showMobileInfo(this)">
+                    <img class="portImg" onmouseover="showPortInfo(this)" src='images/forum.jpg'/>
                     <div>
-                        <a target="_blank" href="https://www.dglarocca.com/forum/login.php">
-                            <h2>PHP Forum</h2>
-                        </a>
-                        <a target="_blank" href='https://github.com/doodleslr/dglarocca-forum'>https://github.com/doodleslr/dglarocca-forum</a>
+                        <a class="inactive" target="_blank" href="https://www.dglarocca.com/forum/login.php"><h2>PHP Forum</h2></a>
+                        <a class="inactive" target="_blank" href='https://github.com/doodleslr/dglarocca-forum'>https://github.com/doodleslr/dglarocca-forum</a>
                         <ul>
                             <li><img src='images/icons/1.gif'/></li>
                             <li><img src='images/icons/2.gif'/></li>
@@ -97,12 +101,19 @@
                             <li><img src='images/icons/11.gif'/></li>
                             <li><img src='images/icons/12.gif'/></li>
                         </ul>
-                        <p>A responsive forum with Reddit inspired voting system, also including image media upload.<br>
-                        Developed mainly in PHP and utilising SASS, HTML5, SQLite for user and post sotrage, and Bootstrap for a quick and reliable UI.</p>
+                        <div>
+                            <p><span>Project</span><br>This was a fun project I used to warm up my PHP skills before working on a PHP e-Commerce site.<br>
+                            I developed this mainly in PHP and utilised SASS, HTML5, SQLite for user and data storage, and Bootstrap for a quick and reliable UI.</p>
+                            <p><span>Project Difficulties</span><br>My major challenge in this project was encountering a PHP error that halted all POST and GET requests.<br>
+                            I rewrote all code for two weeks before I reached out to a friend who correctly suggested looking at the memory limit in php.ini.<br>
+                            Another challenge was only counting unique votes on posts to prevent duplicates.</p>
+                            <p><span>My Solutions</span><br>From the memory limit error I learned a powerful lesson about collaboration, fresh eyes, and that coding alone can and will lead to tunnel vision.<br>
+                            For my unique votes problem I bound the username and vote to the post and only updated the tally if the vote didn't exist or was unique.</p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <img onmouseover="showPortInfo(this)" src='images/accounting.jpg'/>
+                <div ontouchstart="showMobileInfo(this)">
+                    <img class="portImg" onmouseover="showPortInfo(this)" src='images/accounting.jpg'/>
                     <div>
                         <h2>Accounting Site Design</h2>
                     
@@ -110,7 +121,13 @@
                             <li><img src='images/icons/14.gif'/></li>
                             <li><img src='images/icons/15.gif'/></li>
                         </ul>
-                        <p>Rapid design mockup for an accounting business client.<br>Made in Illustrator for layout and Photoshop for editing image assets in design.</p>
+                        <div>
+                            <p><span>My Role</span><br>This was a early design mockup for an accounting business client.<br>
+                            I made this design in Illustrator for layout and Photoshop to edit image assets.<br>
+                            Unfortunately the time was not right and this project has been put on hold for the time being.</p>
+                            <p><span>Project Difficulties</span><br>The challenge was creating a design with little to no direction in aesthetic.</p>
+                            <p><span>My Solutions</span><br>I resolved to create something clean, simple and blue while recycling content used on their current site.</p>
+                        </div>
                     </div>
                 </div>
                 <!-- can include nodejs projects once i figure out how to launch them online -->
@@ -220,10 +237,10 @@
 
     <nav id="footer-menu">
         <ul>
-            <li><a onclick="showItem(this)" href="#Portfolio">Portfolio</a></li>
-            <li><a onclick="showItem(this)" href="#Skills">Skills</a></li>
-            <li><a onclick="showItem(this)" href="#About">About Me</a></li>
-            <li><a onclick="showItem(this)" href="#Contact">Contact</a></li>
+            <li><a href="#Portfolio">Portfolio</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#About">About Me</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
 </body>
@@ -241,26 +258,38 @@
 <script type = "text/javascript" src="js/form.js"></script>
 
 <script type = "text/javascript">
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
         });
     });
-});
 
-const showSkill = function(e){
-    let target = e.childNodes[3];
-    console.log(target);
-    target.classList.toggle('active-skill');
-}
+    const showSkill = function(e){
+        let target = e.childNodes[3];
+        console.log(target);
+        target.classList.toggle('active-skill');
+    }
 
-const showPortInfo = function(e){
-    let target = e.nextElementSibling;
-    target.classList.add('portfolio-item');
-}
+    const showPortInfo = function(e){
+        let target  = e.nextElementSibling;
+        let link    = target.querySelectorAll('.inactive');
+        for(var i = 0; i < link.length; i++) {
+            link[i].classList.remove('inactive');
+        }
+        target.style.height = "450px";
+        target.style.opacity = "1";
+        target.classList.add('portfolio-item');
+    }
+
+    const showMobileInfo = function(e){
+        let target  = e.querySelector('div');
+        let link    = target.querySelectorAll('.inactive');
+        for(var i = 0; i < link.length; i++) {
+            link[i].classList.remove('inactive');
+        }
+        target.style.display = "contents";
+        target.classList.add('portfolio-item');
+    }
 </script>
 </html>
