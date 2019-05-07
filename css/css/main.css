@@ -55,10 +55,10 @@
     letter-spacing: 1px; } }
 @media (min-width: 480px) and (max-width: 599px) {
   body #introduction h1 {
-    top: 30%; } }
+    top: 15%; } }
 @media only screen and (max-width: 479px) {
   body #introduction h1 {
-    top: 30%; } }
+    top: 15%; } }
 
 @media (min-width: 480px) and (max-width: 599px) {
   body #menu {
@@ -79,6 +79,12 @@
   body #menu ul li a {
     font-size: 12px; } }
 
+@media (min-width: 480px) and (max-width: 599px) {
+  body #instruction .mobile-hide {
+    display: none; } }
+@media only screen and (max-width: 479px) {
+  body #instruction .mobile-hide {
+    display: none; } }
 @media screen and (min-width: 992px) {
   body #instruction #mobile-instruction {
     display: none; } }
@@ -108,6 +114,12 @@
   body #content #Portfolio div div img {
     max-width: 300px; } }
 @media (min-width: 480px) and (max-width: 599px) {
+  body #content #Portfolio div div .portfolio-item {
+    display: contents; } }
+@media only screen and (max-width: 479px) {
+  body #content #Portfolio div div .portfolio-item {
+    display: contents; } }
+@media (min-width: 480px) and (max-width: 599px) {
   body #content #Portfolio div div .portfolio-item a {
     font-size: 12px; } }
 @media only screen and (max-width: 479px) {
@@ -121,6 +133,18 @@
   body #content #Portfolio div div .portfolio-item ul li img {
     max-width: 20px;
     max-height: 20px; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Portfolio div div .portfolio-item div {
+    flex-direction: column; } }
+@media only screen and (max-width: 479px) {
+  body #content #Portfolio div div .portfolio-item div {
+    flex-direction: column; } }
+@media (min-width: 480px) and (max-width: 599px) {
+  body #content #Portfolio div div .portfolio-item div p {
+    padding: 10px 15px; } }
+@media only screen and (max-width: 479px) {
+  body #content #Portfolio div div .portfolio-item div p {
+    padding: 10px 15px; } }
 @media (min-width: 480px) and (max-width: 599px) {
   body #content #Skills .skill-list {
     padding: 10px 0px; } }
@@ -276,7 +300,7 @@ body {
   100% {
     background-position-y: 2000px; } }
 #introduction {
-  height: 100vh;
+  height: 65vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -285,7 +309,7 @@ body {
   background-image: url("../../images/BG-master.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-attachment: fixed;
   text-align: center;
   position: relative;
@@ -297,9 +321,9 @@ body {
     text-align: justify;
     letter-spacing: 2px; }
   #introduction h1 {
-    top: 45%; }
+    top: 25%; }
   #introduction h4 {
-    top: 55%; }
+    top: 35%; }
 
 #container {
   position: relative;
@@ -320,6 +344,10 @@ img {
 
 .active-skill {
   display: flex !important; }
+
+.inactive {
+  pointer-events: none;
+  cursor: default; }
 
 footer {
   margin-top: 50px;
@@ -472,23 +500,30 @@ canvas {
   flex-direction: column;
   z-index: 2; }
   #Portfolio div div {
-    display: inline-flex;
-    margin: 10px 0px;
-    max-width: 300px; }
+    margin: 10px 0px; }
     #Portfolio div div div {
-      display: none; }
-    #Portfolio div div .portfolio-item {
-      display: inline-flex; }
-      #Portfolio div div .portfolio-item h2 {
-        padding: 20px 0px; }
-      #Portfolio div div .portfolio-item a, #Portfolio div div .portfolio-item p {
+      height: 0px;
+      transition: height 0.2s ease, opacity 0.3s ease;
+      opacity: 0; }
+      #Portfolio div div div h2, #Portfolio div div div a {
         padding: 10px 0px; }
-      #Portfolio div div .portfolio-item ul {
+      #Portfolio div div div div {
+        height: auto;
+        opacity: 1;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline; }
+        #Portfolio div div div div p {
+          padding: 0px 15px;
+          max-width: 400px; }
+          #Portfolio div div div div p span {
+            padding: 5px 0px; }
+      #Portfolio div div div ul {
         list-style-type: none;
         display: flex;
         text-align: center;
         justify-content: center; }
-        #Portfolio div div .portfolio-item ul li {
+        #Portfolio div div div ul li {
           display: inline-flex;
           padding: 0px 3px; }
 

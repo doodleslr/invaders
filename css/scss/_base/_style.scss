@@ -31,7 +31,7 @@ body {
 }
 
 #introduction {
-    height: 100vh;
+    height: 65vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -40,7 +40,7 @@ body {
     background-image: url("../../images/BG-master.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-attachment: fixed;
     text-align: center;
     position: relative;
@@ -53,15 +53,13 @@ body {
         letter-spacing: 2px;
     }
     h1 {
-        top: 45%;
+        top: 25%;
     }
     h4 {
-        top: 55%;
+        top: 35%;
     }
 }
 #container {
-    // height: 520px;
-    // width: 680px;
     position: relative;
     display: flex;
     align-items: center;
@@ -78,6 +76,10 @@ img {
 }
 .active-skill {
     display: flex !important;
+}
+.inactive {
+    pointer-events: none;
+    cursor: default;
 }
 
 footer {

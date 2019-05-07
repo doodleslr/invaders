@@ -59,10 +59,10 @@ body #introduction {
     }
     h1 {
         @include SM {
-            top: 30%;
+            top: 15%;
         }
         @include XS {
-            top: 30%;
+            top: 15%;
         }
     }
 }
@@ -93,6 +93,14 @@ body #menu {
     }
 }
 body #instruction {
+    .mobile-hide {
+        @include SM {
+            display: none;
+        }
+        @include XS {
+            display: none;
+        }
+    }
     #mobile-instruction {
         @include XL {
             display: none;
@@ -136,6 +144,12 @@ body #content {
                     }
                 }
                 .portfolio-item {
+                    @include SM {
+                        display: contents;
+                    }
+                    @include XS {
+                        display: contents;
+                    }
                     a {
                         @include SM {
                             font-size: 12px;
@@ -155,6 +169,22 @@ body #content {
                                     max-width: 20px;
                                     max-height: 20px;
                                 }
+                            }
+                        }
+                    }
+                    div {
+                        @include SM {
+                            flex-direction: column;
+                        }
+                        @include XS {
+                            flex-direction: column;
+                        }
+                        p {
+                            @include SM {
+                                padding: 10px 15px;
+                            }
+                            @include XS {
+                                padding: 10px 15px;
                             }
                         }
                     }
