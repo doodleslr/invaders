@@ -278,16 +278,10 @@
 ::-webkit-scrollbar {
   display: none; }
 
-html {
-  height: 100%;
-  width: 100%; }
-
 body {
   align-content: center;
   background-color: #fff;
-  justify-items: center;
-  height: 100%;
-  width: 100%; }
+  justify-items: center; }
 
 #overlay {
   background-image: url("../../images/scanlines.png");
