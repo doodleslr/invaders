@@ -22,18 +22,10 @@
             <li><a href="#Skills">Skills</a></li>
             <li><a href="#About">About Me</a></li>
             <li><a href="#Contact">Contact</a></li>
+            <!-- <li><a href="invaders.php">Game</a></li> -->
         </ul>
     </nav>
-    <div id="instruction">
-        <p class="mobile-hide">You can use the ←↑→ keyboard arrow keys to navigate the planets and pages.</p>
-        <p class="mobile-hide">Otherwise the menu above can help you navigate the site.</p>
-        <p id="mobile-instruction"> Unfortunately this game does not work on mobile or tablet right now, but touch screen support will be added <span>in the future!</span></p>
-        <p>Feel free to view the source code for this game <a href='https://github.com/doodleslr/invaders' target="_blank">here!</a></p>
-    </div>
-    <div id='container'>
-        <canvas id='background-canvas'></canvas>
-        <canvas id='player-canvas'></canvas>
-    </div>
+
     <div id='content'>
         <div id="Portfolio">
             <h1>Portfolio<div class="border"></div></h1>
@@ -86,6 +78,26 @@
                     </div>
                 </div>
                 <div ontouchstart="showMobileInfo(this)">
+                    <img class="portImg" onmouseover="showPortInfo(this)" src='images/rijks.jpg'/>
+                    <div>
+                        <a class="inactive" target="_blank" href="http://www.dglarocca.com/rijks/"><h2>Rijksmuseum Browser</h2></a>
+                        <a class="inactive" target="_blank" href='https://github.com/doodleslr/Rijksmuseum'>https://github.com/doodleslr/Rijksmuseum</a>
+                        <ul>
+                            <li><img src='images/icons/2.gif'/></li>
+                            <li><img src='images/icons/3.gif'/></li>
+                            <li><img src='images/icons/4.gif'/></li>
+                            <li><img src='images/icons/16.gif'/></li>
+                        </ul>
+                        <div>
+                            <p><span>Project</span><br>This website was used to develop my Reactjs skills and to become more comfortable in a React environment.<br>
+                            I developed this in entirely with React and utilised SASS.</p>
+                            <p><span>Project Difficulties</span><br>A challenge in this project was being too ambitious with the Rijksmuseum API, I had grand ideas but the schema for the API allowed only strict use with queries and information navigation. Another difficulty was implementing the tile swap puzzle in a React environment with state.</p>
+                            <p><span>My Solutions</span><br>I challenged myself to manipulate the API information and that helped me find the limits of what I could do with the API.<br>
+                            For the tile puzzle I followed a tutorial on how to setup a vanila JS tile puzzle, which helped me figure what to pass in my state.</p>
+                        </div>
+                    </div>
+                </div>
+                <div ontouchstart="showMobileInfo(this)">
                     <img class="portImg" onmouseover="showPortInfo(this)" src='images/forum.jpg'/>
                     <div>
                         <a class="inactive" target="_blank" href="https://www.dglarocca.com/forum/login.php"><h2>PHP Forum</h2></a>
@@ -130,8 +142,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- can include nodejs projects once i figure out how to launch them online -->
-                <!-- also wiki project, and maybe weather if i fix it -->
+
             </div>
         </div>
         <div id="Skills">
@@ -241,6 +252,7 @@
             <li><a href="#Skills">Skills</a></li>
             <li><a href="#About">About Me</a></li>
             <li><a href="#Contact">Contact</a></li>
+            <!-- <li><a href="invaders.php">Game</a></li> -->
         </ul>
     </nav>
 </body>
@@ -248,14 +260,6 @@
 <footer>
     <a href='#'>dglarocca@hotmail.com</a><a href='tel:+61402509254'>+61 402 509 254</a>
 </footer>
-
-
-<script type = "text/javascript" src="js/main.js"></script>
-<script type = "text/javascript" src="js/engine.js"></script>
-<script type = "text/javascript" src="js/display.js"></script>
-<script type = "text/javascript" src="js/controller.js"></script>
-<script type = "text/javascript" src="js/game.js"></script>
-<script type = "text/javascript" src="js/form.js"></script>
 
 <script type = "text/javascript">
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -292,4 +296,5 @@
         target.classList.add('portfolio-item');
     }
 </script>
+
 </html>
